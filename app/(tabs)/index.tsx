@@ -25,13 +25,16 @@ export default function HomeScreen() {
   const textColor = useThemeColor({}, 'text');
 
   const insets = useSafeAreaInsets();
-  const FOOTER_HEIGHT = 64;
+  const FOOTER_MIN_HEIGHT = 64;
 
   const scrollRef = useRef<ScrollView>(null);
   const [input, setInput] = useState('');
   const [items, setItems] = useState<{ raw: string; norm: string }[]>([]);
   const [result, setResult] = useState<GradeResult | null>(null);
   const [error, setError] = useState<string | null>(null);
+  const [footerHeight, setFooterHeight] = useState<number>(
+    FOOTER_MIN_HEIGHT + insets.bottom + 12
+  );
 
   const inputNorm = useMemo(() => normalizeAnswer(input), [input]);
   const normSet = useMemo(() => new Set(items.map((x) => x.norm)), [items]);
@@ -80,14 +83,18 @@ export default function HomeScreen() {
     });
   }, [result]);
 
+  // bottom inset is applied ONLY here (footer). SafeAreaView excludes bottom.
   const footerPaddingBottom = 10 + insets.bottom;
-  const scrollPaddingBottom = FOOTER_HEIGHT + footerPaddingBottom + 16;
+  // Keep results visible above the fixed footer
+  const scrollPaddingBottom = footerHeight + 16;
 
   return (
     <KeyboardAvoidingView
       style={styles.kav}
       behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
-      <SafeAreaView style={[styles.safe, { backgroundColor: background }]}>
+      <SafeAreaView
+        edges={['top', 'left', 'right']}
+        style={[styles.safe, { backgroundColor: background }]}>
         {/* [A] Scrollable area (送信ボタンは絶対に含めない) */}
         <ScrollView
           ref={scrollRef}
@@ -212,9 +219,15 @@ export default function HomeScreen() {
 
         {/* [B] Fixed footer (送信ボタンのみ) */}
         <View
+          onLayout={(e) => setFooterHeight(e.nativeEvent.layout.height)}
           style={[
             styles.footer,
-            { paddingBottom: footerPaddingBottom, borderColor: icon, backgroundColor: background },
+            {
+              minHeight: FOOTER_MIN_HEIGHT,
+              paddingBottom: footerPaddingBottom,
+              borderColor: icon,
+              backgroundColor: background,
+            },
           ]}>
           <Pressable
             onPress={submit}
@@ -325,7 +338,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 1,
     paddingHorizontal: 16,
     paddingTop: 10,
-    height: 64,
     justifyContent: 'center',
   },
   submitButton: {
