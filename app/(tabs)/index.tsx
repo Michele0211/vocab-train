@@ -114,9 +114,6 @@ export default function HomeScreen() {
               <ThemedText type="defaultSemiBold">
                 {items.length} / 10
               </ThemedText>
-              <ThemedText style={styles.cardExample} lightColor={icon} darkColor={icon}>
-                例：{dataset.title}
-              </ThemedText>
             </View>
           </ThemedView>
 
