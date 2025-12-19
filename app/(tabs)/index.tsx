@@ -13,7 +13,7 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import dataset from '@/datasets/sea_asia_countries.json';
+import { THEMES, type ThemeMeta } from '@/datasets/themes';
 import { useThemeColor } from '@/hooks/use-theme-color';
 import { gradeAnswers, type GradeResult } from '@/src/lib/grading';
 import { normalizeAnswer } from '@/src/lib/normalize';
@@ -36,10 +36,40 @@ export default function HomeScreen() {
     FOOTER_MIN_HEIGHT + insets.bottom + 12
   );
 
+  const [selectedCategoryId] = useState<string>('geography');
+  const [activeTheme, setActiveTheme] = useState<ThemeMeta>(THEMES[0]);
+  const lastThemeIdRef = useRef<string>(THEMES[0]?.id ?? '');
+
+  const dataset = activeTheme.dataset;
+
   const inputNorm = useMemo(() => normalizeAnswer(input), [input]);
   const normSet = useMemo(() => new Set(items.map((x) => x.norm)), [items]);
 
   const canAdd = items.length < 10 && inputNorm.length > 0 && !normSet.has(inputNorm);
+
+  const resetPlay = () => {
+    setItems([]);
+    setInput('');
+    setError(null);
+    setResult(null);
+  };
+
+  const drawTheme = () => {
+    const pool = THEMES.filter((t) => t.categoryId === selectedCategoryId);
+    if (pool.length === 0) {
+      setError('このカテゴリにテーマがありません');
+      return;
+    }
+
+    const lastId = lastThemeIdRef.current;
+    const candidates =
+      pool.length >= 2 && lastId ? pool.filter((t) => t.id !== lastId) : pool;
+    const picked = candidates[Math.floor(Math.random() * candidates.length)];
+
+    lastThemeIdRef.current = picked.id;
+    setActiveTheme(picked);
+    resetPlay();
+  };
 
   const add = () => {
     const norm = normalizeAnswer(input);
@@ -100,6 +130,35 @@ export default function HomeScreen() {
           ref={scrollRef}
           contentContainerStyle={[styles.container, { paddingBottom: scrollPaddingBottom }]}
           keyboardShouldPersistTaps="handled">
+          {/* 出題アクション */}
+          <ThemedView style={styles.section}>
+            <ThemedText type="subtitle">出題</ThemedText>
+            <View style={styles.quizActionsRow}>
+              <Pressable
+                onPress={drawTheme}
+                style={({ pressed }) => [
+                  styles.secondaryButton,
+                  { borderColor: tint },
+                  pressed ? { opacity: 0.85 } : null,
+                ]}>
+                <ThemedText style={styles.secondaryButtonText} lightColor={tint} darkColor={tint}>
+                  出題
+                </ThemedText>
+              </Pressable>
+              <Pressable
+                onPress={resetPlay}
+                style={({ pressed }) => [
+                  styles.ghostButton,
+                  { borderColor: icon },
+                  pressed ? { opacity: 0.85 } : null,
+                ]}>
+                <ThemedText style={styles.ghostButtonText} lightColor={icon} darkColor={icon}>
+                  同じ問題をもう一度
+                </ThemedText>
+              </Pressable>
+            </View>
+          </ThemedView>
+
           {/* 出題カード */}
           <ThemedView style={[styles.card, { borderColor: icon }]}>
             <ThemedText style={styles.cardLabel} lightColor={icon} darkColor={icon}>
@@ -279,6 +338,34 @@ const styles = StyleSheet.create({
   },
   section: {
     gap: 10,
+  },
+  quizActionsRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+    alignItems: 'center',
+  },
+  secondaryButton: {
+    borderWidth: 2,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  secondaryButtonText: {
+    fontSize: 16,
+    fontWeight: '700',
+  },
+  ghostButton: {
+    borderWidth: 1,
+    borderRadius: 12,
+    paddingHorizontal: 14,
+    paddingVertical: 12,
+  },
+  ghostButtonText: {
+    fontSize: 14,
+    fontWeight: '600',
   },
   inputRow: {
     flexDirection: 'row',
