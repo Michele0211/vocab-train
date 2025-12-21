@@ -52,6 +52,7 @@ export default function HomeScreen() {
   const resultAnim = useRef(new Animated.Value(1)).current; // scale
   const resultOpacity = useRef(new Animated.Value(0)).current; // opacity
   const successFlash = useRef(new Animated.Value(0)).current; // 0..1
+  const celebrateAnim = useRef(new Animated.Value(0)).current; // 0..1 (appear -> hide)
 
   const inputNorm = useMemo(() => normalizeAnswer(input), [input]);
   const normSet = useMemo(() => new Set(items.map((x) => x.norm)), [items]);
@@ -172,6 +173,7 @@ export default function HomeScreen() {
     resultAnim.stopAnimation();
     resultOpacity.stopAnimation();
     successFlash.stopAnimation();
+    celebrateAnim.stopAnimation();
 
     // Safety: never leave result invisible even if animation is interrupted
     resultOpacity.setValue(1);
@@ -180,6 +182,7 @@ export default function HomeScreen() {
     resultOpacity.setValue(0);
     resultAnim.setValue(0.995);
     successFlash.setValue(0);
+    celebrateAnim.setValue(0);
 
     const base = Animated.parallel([
       Animated.timing(resultOpacity, {
@@ -230,7 +233,24 @@ export default function HomeScreen() {
           }),
         ]);
 
-        Animated.parallel([bounce, flash]).start();
+        const celebrate = Animated.sequence([
+          Animated.timing(celebrateAnim, {
+            toValue: 1,
+            duration: 120,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: true,
+          }),
+          // Keep the badge visible for ~1s total (including fade-in/out)
+          Animated.delay(820),
+          Animated.timing(celebrateAnim, {
+            toValue: 0,
+            duration: 120,
+            easing: Easing.out(Easing.cubic),
+            useNativeDriver: true,
+          }),
+        ]);
+
+        Animated.parallel([bounce, flash, celebrate]).start();
       });
     } else {
       base.start();
@@ -239,7 +259,7 @@ export default function HomeScreen() {
     // Final safety: force visible after animations
     const t = setTimeout(() => resultOpacity.setValue(1), 600);
     return () => clearTimeout(t);
-  }, [result, resultAnim, resultOpacity, successFlash]);
+  }, [result, resultAnim, resultOpacity, successFlash, celebrateAnim]);
 
   useEffect(() => {
     if (!result) return;
@@ -448,6 +468,29 @@ export default function HomeScreen() {
                       borderColor: icon,
                     },
                   ]}>
+                  {result.score === 10 ? (
+                    <Animated.View
+                      pointerEvents="none"
+                      style={{
+                        position: 'absolute',
+                        top: -8,
+                        right: -8,
+                        opacity: celebrateAnim.interpolate({
+                          inputRange: [0, 1],
+                          outputRange: [0, 1],
+                        }),
+                        transform: [
+                          {
+                            scale: celebrateAnim.interpolate({
+                              inputRange: [0, 1],
+                              outputRange: [0.6, 1.1],
+                            }),
+                          },
+                        ],
+                      }}>
+                      <ThemedText style={styles.celebrateBadge}>🎉</ThemedText>
+                    </Animated.View>
+                  ) : null}
                   <ThemedText>正解数: {result.score}</ThemedText>
                   <ThemedText>不足数（10 - 入力数）: {Math.max(0, 10 - items.length)}</ThemedText>
                 </Animated.View>
@@ -660,5 +703,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 12,
     paddingVertical: 10,
     gap: 6,
+  },
+  celebrateBadge: {
+    fontSize: 20,
+    lineHeight: 22,
   },
 });
