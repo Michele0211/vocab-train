@@ -1,5 +1,7 @@
-import { useEffect, useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
+  Animated,
+  Easing,
   Keyboard,
   KeyboardAvoidingView,
   Platform,
@@ -13,10 +15,11 @@ import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context'
 
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
-import { THEMES, type ThemeMeta } from '@/datasets/themes';
+import { CATEGORIES, THEMES, type ThemeMeta } from '@/datasets/themes';
 import { useThemeColor } from '@/hooks/use-theme-color';
 import { gradeAnswers, type GradeResult } from '@/src/lib/grading';
 import { normalizeAnswer } from '@/src/lib/normalize';
+import { recordPlay } from '@/src/lib/records';
 
 export default function HomeScreen() {
   const tint = useThemeColor({}, 'tint');
@@ -36,16 +39,69 @@ export default function HomeScreen() {
     FOOTER_MIN_HEIGHT + insets.bottom + 12
   );
 
-  const [selectedCategoryId] = useState<string>('geography');
+  const [selectedCategoryId, setSelectedCategoryId] = useState<string>(CATEGORIES[0]?.id ?? 'geography');
   const [activeTheme, setActiveTheme] = useState<ThemeMeta>(THEMES[0]);
   const lastThemeIdRef = useRef<string>(THEMES[0]?.id ?? '');
 
   const dataset = activeTheme.dataset;
 
+  // Animations
+  const questionAnim = useRef(new Animated.Value(0)).current; // 0..1 => opacity/scale
+  const questionLift = useRef(new Animated.Value(12)).current; // translateY: 12 -> 0
+  const questionScale = useRef(new Animated.Value(1)).current; // overshoot: 1 -> 1.02 -> 1
+  const resultAnim = useRef(new Animated.Value(1)).current; // scale
+  const resultOpacity = useRef(new Animated.Value(0)).current; // opacity
+  const successFlash = useRef(new Animated.Value(0)).current; // 0..1
+
   const inputNorm = useMemo(() => normalizeAnswer(input), [input]);
   const normSet = useMemo(() => new Set(items.map((x) => x.norm)), [items]);
 
   const canAdd = items.length < 10 && inputNorm.length > 0 && !normSet.has(inputNorm);
+
+  const runQuestionAnimation = useCallback(() => {
+    questionAnim.stopAnimation();
+    questionLift.stopAnimation();
+    questionScale.stopAnimation();
+    questionAnim.setValue(0);
+    questionLift.setValue(12);
+    questionScale.setValue(1);
+
+    const base = Animated.parallel([
+      Animated.timing(questionAnim, {
+        toValue: 1,
+        duration: 260,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+      Animated.timing(questionLift, {
+        toValue: 0,
+        duration: 260,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+    ]);
+
+    const overshoot = Animated.sequence([
+      Animated.timing(questionScale, {
+        toValue: 1.02,
+        duration: 90,
+        easing: Easing.out(Easing.quad),
+        useNativeDriver: true,
+      }),
+      Animated.timing(questionScale, {
+        toValue: 1,
+        duration: 140,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+    ]);
+
+    Animated.sequence([base, overshoot]).start();
+  }, [questionAnim, questionLift, questionScale]);
+
+  useEffect(() => {
+    runQuestionAnimation();
+  }, [activeTheme.id, runQuestionAnimation]);
 
   const resetPlay = () => {
     setItems([]);
@@ -69,6 +125,7 @@ export default function HomeScreen() {
     lastThemeIdRef.current = picked.id;
     setActiveTheme(picked);
     resetPlay();
+    runQuestionAnimation();
   };
 
   const add = () => {
@@ -104,7 +161,85 @@ export default function HomeScreen() {
     const r = gradeAnswers(userAnswers, dataset.answers);
     setResult(r);
     setError(null);
+
+    // Record play (AsyncStorage). Perfect is score===10 by spec.
+    void recordPlay(activeTheme.id, r.score === 10);
   };
+
+  useEffect(() => {
+    if (!result) return;
+
+    resultAnim.stopAnimation();
+    resultOpacity.stopAnimation();
+    successFlash.stopAnimation();
+
+    // Safety: never leave result invisible even if animation is interrupted
+    resultOpacity.setValue(1);
+
+    // Base: fade in + tiny scale-up
+    resultOpacity.setValue(0);
+    resultAnim.setValue(0.995);
+    successFlash.setValue(0);
+
+    const base = Animated.parallel([
+      Animated.timing(resultOpacity, {
+        toValue: 1,
+        duration: 220,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+      Animated.timing(resultAnim, {
+        toValue: 1,
+        duration: 220,
+        easing: Easing.out(Easing.cubic),
+        useNativeDriver: true,
+      }),
+    ]);
+
+    if (result.score === 10) {
+      base.start(({ finished }) => {
+        if (!finished) return;
+
+        const bounce = Animated.sequence([
+          Animated.timing(resultAnim, {
+            toValue: 1.04,
+            duration: 120,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: true,
+          }),
+          Animated.timing(resultAnim, {
+            toValue: 1,
+            duration: 180,
+            easing: Easing.out(Easing.cubic),
+            useNativeDriver: true,
+          }),
+        ]);
+
+        const flash = Animated.sequence([
+          Animated.timing(successFlash, {
+            toValue: 1,
+            duration: 120,
+            easing: Easing.out(Easing.quad),
+            useNativeDriver: false,
+          }),
+          Animated.timing(successFlash, {
+            toValue: 0,
+            duration: 260,
+            easing: Easing.out(Easing.cubic),
+            useNativeDriver: false,
+          }),
+        ]);
+
+        Animated.parallel([bounce, flash]).start();
+      });
+    } else {
+      base.start();
+    }
+
+    // Final safety: force visible after animations
+    const t = setTimeout(() => resultOpacity.setValue(1), 600);
+    return () => clearTimeout(t);
+  }, [result, resultAnim, resultOpacity, successFlash]);
 
   useEffect(() => {
     if (!result) return;
@@ -130,6 +265,33 @@ export default function HomeScreen() {
           ref={scrollRef}
           contentContainerStyle={[styles.container, { paddingBottom: scrollPaddingBottom }]}
           keyboardShouldPersistTaps="handled">
+          {/* カテゴリ選択 */}
+          <ThemedView style={styles.section}>
+            <ThemedText type="subtitle">カテゴリ</ThemedText>
+            <View style={styles.categoryRow}>
+              {CATEGORIES.map((c) => {
+                const selected = c.id === selectedCategoryId;
+                return (
+                  <Pressable
+                    key={c.id}
+                    onPress={() => setSelectedCategoryId(c.id)}
+                    style={({ pressed }) => [
+                      styles.categoryChip,
+                      { borderColor: selected ? tint : icon },
+                      pressed ? { opacity: 0.85 } : null,
+                    ]}>
+                    <ThemedText
+                      style={styles.categoryChipText}
+                      lightColor={selected ? tint : undefined}
+                      darkColor={selected ? tint : undefined}>
+                      {c.title}
+                    </ThemedText>
+                  </Pressable>
+                );
+              })}
+            </View>
+          </ThemedView>
+
           {/* 出題アクション */}
           <ThemedView style={styles.section}>
             <ThemedText type="subtitle">出題</ThemedText>
@@ -146,7 +308,10 @@ export default function HomeScreen() {
                 </ThemedText>
               </Pressable>
               <Pressable
-                onPress={resetPlay}
+                onPress={() => {
+                  resetPlay();
+                  runQuestionAnimation();
+                }}
                 style={({ pressed }) => [
                   styles.ghostButton,
                   { borderColor: icon },
@@ -160,21 +325,38 @@ export default function HomeScreen() {
           </ThemedView>
 
           {/* 出題カード */}
-          <ThemedView style={[styles.card, { borderColor: icon }]}>
-            <ThemedText style={styles.cardLabel} lightColor={icon} darkColor={icon}>
-              今日のお題
-            </ThemedText>
-            <ThemedText style={styles.cardTitle}>{dataset.title}</ThemedText>
-            <ThemedText style={styles.cardSub} lightColor={icon} darkColor={icon}>
-              10個、思い出せる？
-            </ThemedText>
-
-            <View style={styles.cardMetaRow}>
-              <ThemedText type="defaultSemiBold">
-                {items.length} / 10
+          <Animated.View
+            style={{
+              opacity: questionAnim,
+              transform: [
+                { translateY: questionLift },
+                {
+                  scale: Animated.multiply(
+                    questionAnim.interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0.95, 1],
+                    }),
+                    questionScale
+                  ),
+                },
+              ],
+            }}>
+            <ThemedView style={[styles.card, { borderColor: icon }]}>
+              <ThemedText style={styles.cardLabel} lightColor={icon} darkColor={icon}>
+                今日のお題
               </ThemedText>
-            </View>
-          </ThemedView>
+              <ThemedText style={styles.cardTitle}>{dataset.title}</ThemedText>
+              <ThemedText style={styles.cardSub} lightColor={icon} darkColor={icon}>
+                10個、思い出せる？
+              </ThemedText>
+
+              <View style={styles.cardMetaRow}>
+                <ThemedText type="defaultSemiBold">
+                  {items.length} / 10
+                </ThemedText>
+              </View>
+            </ThemedView>
+          </Animated.View>
 
           {/* 入力 */}
           <ThemedView style={styles.section}>
@@ -247,29 +429,48 @@ export default function HomeScreen() {
 
           {/* 結果 */}
           {result ? (
-            <ThemedView style={styles.section}>
-              <ThemedText type="subtitle">結果</ThemedText>
-              <ThemedText>正解数: {result.score}</ThemedText>
-              <ThemedText>不足数（10 - 入力数）: {Math.max(0, 10 - items.length)}</ThemedText>
+            <Animated.View
+              style={{
+                opacity: resultOpacity,
+                transform: [{ scale: resultAnim }],
+              }}>
+              <ThemedView style={styles.section}>
+                <ThemedText type="subtitle">結果</ThemedText>
 
-              <ThemedView style={styles.resultsBlock}>
-                <ThemedText type="defaultSemiBold">不正解</ThemedText>
-                {result.wrong.length === 0 ? (
-                  <ThemedText>なし</ThemedText>
-                ) : (
-                  result.wrong.map((w, i) => <ThemedText key={`${w}-${i}`}>- {w}</ThemedText>)
-                )}
-              </ThemedView>
+                <Animated.View
+                  style={[
+                    styles.resultSummaryBox,
+                    {
+                      backgroundColor: successFlash.interpolate({
+                        inputRange: [0, 1],
+                        outputRange: ['rgba(0,0,0,0)', 'rgba(46, 204, 113, 0.18)'],
+                      }),
+                      borderColor: icon,
+                    },
+                  ]}>
+                  <ThemedText>正解数: {result.score}</ThemedText>
+                  <ThemedText>不足数（10 - 入力数）: {Math.max(0, 10 - items.length)}</ThemedText>
+                </Animated.View>
 
-              <ThemedView style={styles.resultsBlock}>
-                <ThemedText type="defaultSemiBold">模範解答（最大5件）</ThemedText>
-                {result.missingSuggested.length === 0 ? (
-                  <ThemedText>なし</ThemedText>
-                ) : (
-                  result.missingSuggested.map((a) => <ThemedText key={a}>- {a}</ThemedText>)
-                )}
+                <ThemedView style={styles.resultsBlock}>
+                  <ThemedText type="defaultSemiBold">不正解</ThemedText>
+                  {result.wrong.length === 0 ? (
+                    <ThemedText>なし</ThemedText>
+                  ) : (
+                    result.wrong.map((w, i) => <ThemedText key={`${w}-${i}`}>- {w}</ThemedText>)
+                  )}
+                </ThemedView>
+
+                <ThemedView style={styles.resultsBlock}>
+                  <ThemedText type="defaultSemiBold">模範解答（最大5件）</ThemedText>
+                  {result.missingSuggested.length === 0 ? (
+                    <ThemedText>なし</ThemedText>
+                  ) : (
+                    result.missingSuggested.map((a) => <ThemedText key={a}>- {a}</ThemedText>)
+                  )}
+                </ThemedView>
               </ThemedView>
-            </ThemedView>
+            </Animated.View>
           ) : null}
         </ScrollView>
 
@@ -338,6 +539,21 @@ const styles = StyleSheet.create({
   },
   section: {
     gap: 10,
+  },
+  categoryRow: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    gap: 10,
+  },
+  categoryChip: {
+    borderWidth: 1,
+    borderRadius: 999,
+    paddingHorizontal: 12,
+    paddingVertical: 8,
+  },
+  categoryChipText: {
+    fontSize: 14,
+    fontWeight: '600',
   },
   quizActionsRow: {
     flexDirection: 'row',
@@ -437,5 +653,12 @@ const styles = StyleSheet.create({
   resultsBlock: {
     gap: 6,
     paddingTop: 6,
+  },
+  resultSummaryBox: {
+    borderWidth: 1,
+    borderRadius: 14,
+    paddingHorizontal: 12,
+    paddingVertical: 10,
+    gap: 6,
   },
 });
