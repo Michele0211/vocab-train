@@ -1,0 +1,12 @@
+{
+  "id": "demo_fruits",
+  "title": "フルーツ",
+  "categoryId": "demo",
+  "categoryTitle": "デモ",
+  "answers": [
+    "りんご",
+    "バナナ",
+    "みかん",
+    "ぶどう"
+  ]
+}

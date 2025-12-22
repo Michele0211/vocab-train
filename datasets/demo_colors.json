@@ -1,0 +1,14 @@
+{
+  "id": "demo_colors",
+  "title": "色",
+  "categoryId": "demo",
+  "categoryTitle": "デモ",
+  "answers": [
+    "赤",
+    "青",
+    "緑",
+    "黄",
+    "黒",
+    "白"
+  ]
+}

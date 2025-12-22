@@ -4,6 +4,9 @@
   "version": "1.0.0",
   "scripts": {
     "generate:themes": "node scripts/generate-themes.mjs",
+    "datasets:generate": "node scripts/generate-datasets.mjs",
+    "themes:generate": "node scripts/generate-themes.mjs",
+    "prepare:data": "npm run datasets:generate && npm run themes:generate",
     "prestart": "node scripts/generate-themes.mjs",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
