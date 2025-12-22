@@ -1,0 +1,253 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+const DEFAULT_CATEGORY_ID = 'geography';
+const DEFAULT_CATEGORY_TITLE = '地理';
+
+const SNAKE_CASE_RE = /^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$/;
+
+function warn(message) {
+  // eslint-disable-next-line no-console
+  console.warn(`WARN: ${message}`);
+}
+
+function fail(message) {
+  // eslint-disable-next-line no-console
+  console.error(`ERROR: ${message}`);
+  process.exitCode = 1;
+}
+
+function toImportIdent(id) {
+  return `t_${id.replace(/[^a-zA-Z0-9_]/g, '_')}`;
+}
+
+function uniqPreserveOrder(arr) {
+  const out = [];
+  const seen = new Set();
+  for (const x of arr) {
+    if (seen.has(x)) continue;
+    seen.add(x);
+    out.push(x);
+  }
+  return out;
+}
+
+async function main() {
+  const repoRoot = process.cwd();
+  const datasetsDir = path.join(repoRoot, 'datasets');
+  const outFile = path.join(datasetsDir, 'themes.generated.ts');
+
+  let entries;
+  try {
+    entries = await fs.readdir(datasetsDir, { withFileTypes: true });
+  } catch (e) {
+    fail(`datasets/ の読み取りに失敗しました: ${String(e)}`);
+    return;
+  }
+
+  const jsonFiles = entries
+    .filter((d) => d.isFile() && d.name.endsWith('.json'))
+    .map((d) => d.name)
+    .sort((a, b) => a.localeCompare(b));
+
+  if (jsonFiles.length === 0) {
+    fail('datasets/ に .json が見つかりません');
+    return;
+  }
+
+  const byId = new Map(); // id -> { filename }
+  const categoryTitleById = new Map(); // categoryId -> categoryTitle
+  const themes = [];
+
+  for (const filename of jsonFiles) {
+    const filePath = path.join(datasetsDir, filename);
+    let raw;
+    try {
+      raw = await fs.readFile(filePath, 'utf8');
+    } catch (e) {
+      fail(`${filename}: 読み取りに失敗しました: ${String(e)}`);
+      continue;
+    }
+
+    let data;
+    try {
+      data = JSON.parse(raw);
+    } catch (e) {
+      fail(`${filename}: JSON parse に失敗しました: ${String(e)}`);
+      continue;
+    }
+
+    const id = data?.id;
+    const title = data?.title;
+    let categoryId = data?.categoryId;
+    let categoryTitle = data?.categoryTitle;
+    const answers = data?.answers;
+
+    // 1) id
+    if (typeof id !== 'string' || id.trim() === '') {
+      fail(`${filename}: id が空です`);
+      continue;
+    }
+    if (!SNAKE_CASE_RE.test(id)) {
+      fail(`${filename}: id が snake_case ではありません: "${id}"`);
+      continue;
+    }
+    // 2) id duplicate
+    if (byId.has(id)) {
+      fail(`${filename}: id が重複しています: "${id}"（既存: ${byId.get(id).filename}）`);
+      continue;
+    }
+
+    // 3) title
+    if (typeof title !== 'string' || title.trim() === '') {
+      fail(`${filename}: title が空です（id="${id}"）`);
+      continue;
+    }
+
+    // 4) answers
+    if (!Array.isArray(answers)) {
+      fail(`${filename}: answers が配列ではありません（id="${id}"）`);
+      continue;
+    }
+
+    // 5) answers sanitize
+    const cleaned = uniqPreserveOrder(
+      answers
+        .filter((a) => typeof a === 'string')
+        .map((a) => a.trim())
+        .filter((a) => a !== '')
+    );
+
+    if (cleaned.length === 0) {
+      fail(`${filename}: answers が空です（id="${id}"）`);
+      continue;
+    }
+
+    const beforeCount = answers.filter((a) => typeof a === 'string').length;
+    if (cleaned.length !== beforeCount) {
+      warn(
+        `${filename}: answers を整形しました（空文字除去/trim/重複除去）: ${beforeCount} -> ${cleaned.length}`
+      );
+    }
+
+    // 6) category defaults
+    if (typeof categoryId !== 'string' || categoryId.trim() === '') {
+      warn(`${filename}: categoryId が無いので "${DEFAULT_CATEGORY_ID}" に補完します（id="${id}"）`);
+      categoryId = DEFAULT_CATEGORY_ID;
+    }
+    if (typeof categoryTitle !== 'string' || categoryTitle.trim() === '') {
+      warn(`${filename}: categoryTitle が無いので "${DEFAULT_CATEGORY_TITLE}" に補完します（id="${id}"）`);
+      categoryTitle = DEFAULT_CATEGORY_TITLE;
+    }
+
+    if (!SNAKE_CASE_RE.test(categoryId)) {
+      fail(`${filename}: categoryId が snake_case ではありません: "${categoryId}"（id="${id}"）`);
+      continue;
+    }
+
+    // 7) category title drift
+    const existingTitle = categoryTitleById.get(categoryId);
+    if (existingTitle && existingTitle !== categoryTitle) {
+      fail(
+        `${filename}: categoryTitle 表記ゆれ: categoryId="${categoryId}" が "${existingTitle}" と "${categoryTitle}" を持っています`
+      );
+      continue;
+    }
+    categoryTitleById.set(categoryId, categoryTitle);
+
+    byId.set(id, { filename });
+    themes.push({
+      filename,
+      id,
+      title: title.trim(),
+      categoryId,
+      categoryTitle,
+      answers: cleaned,
+    });
+  }
+
+  if (process.exitCode === 1) return;
+
+  themes.sort((a, b) => {
+    const c = a.categoryId.localeCompare(b.categoryId);
+    if (c) return c;
+    const t = a.title.localeCompare(b.title);
+    if (t) return t;
+    return a.id.localeCompare(b.id);
+  });
+
+  const categories = Array.from(categoryTitleById.entries())
+    .map(([id, title]) => ({ id, title }))
+    .sort((a, b) => a.id.localeCompare(b.id));
+
+  const lines = [];
+  lines.push('/* eslint-disable */');
+  lines.push('// This file is auto-generated by scripts/generate-themes.mjs');
+  lines.push('// Do not edit manually.');
+  lines.push('');
+
+  for (const t of themes) {
+    const ident = toImportIdent(t.id);
+    lines.push(`import ${ident} from './${t.filename}';`);
+  }
+
+  lines.push('');
+  lines.push('export type ThemeDataset = {');
+  lines.push('  id: string;');
+  lines.push('  title: string;');
+  lines.push('  categoryId: string;');
+  lines.push('  categoryTitle: string;');
+  lines.push('  answers: string[];');
+  lines.push('};');
+  lines.push('');
+  lines.push('export type ThemeMeta = {');
+  lines.push('  id: string;');
+  lines.push('  title: string;');
+  lines.push('  categoryId: string;');
+  lines.push('  categoryTitle: string;');
+  lines.push("  datasetPath: string;");
+  lines.push('  dataset: ThemeDataset;');
+  lines.push('};');
+  lines.push('');
+  lines.push('export type CategoryMeta = { id: string; title: string };');
+  lines.push('');
+
+  for (const t of themes) {
+    const ident = toImportIdent(t.id);
+    const dIdent = `d_${t.id}`;
+    lines.push(`const ${dIdent} = {`);
+    lines.push(`  ...${ident},`);
+    lines.push(`  categoryId: ${JSON.stringify(t.categoryId)},`);
+    lines.push(`  categoryTitle: ${JSON.stringify(t.categoryTitle)},`);
+    lines.push(`  answers: ${JSON.stringify(t.answers, null, 2)},`);
+    lines.push(`} as ThemeDataset;`);
+    lines.push('');
+  }
+
+  lines.push(`export const CATEGORIES: CategoryMeta[] = ${JSON.stringify(categories, null, 2)};`);
+  lines.push('');
+  lines.push('export const THEMES: ThemeMeta[] = [');
+  for (const t of themes) {
+    const dIdent = `d_${t.id}`;
+    lines.push('  {');
+    lines.push(`    id: ${JSON.stringify(t.id)},`);
+    lines.push(`    title: ${JSON.stringify(t.title)},`);
+    lines.push(`    categoryId: ${JSON.stringify(t.categoryId)},`);
+    lines.push(`    categoryTitle: ${JSON.stringify(t.categoryTitle)},`);
+    lines.push(`    datasetPath: ${JSON.stringify(`datasets/${t.filename}`)},`);
+    lines.push(`    dataset: ${dIdent},`);
+    lines.push('  },');
+  }
+  lines.push('];');
+  lines.push('');
+
+  await fs.writeFile(outFile, lines.join('\n'), 'utf8');
+  // eslint-disable-next-line no-console
+  console.log(
+    `OK: generated ${path.relative(repoRoot, outFile)} (${themes.length} themes, ${categories.length} categories)`
+  );
+}
+
+await main();
+
+

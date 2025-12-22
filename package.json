@@ -3,10 +3,15 @@
   "main": "expo-router/entry",
   "version": "1.0.0",
   "scripts": {
+    "generate:themes": "node scripts/generate-themes.mjs",
+    "prestart": "node scripts/generate-themes.mjs",
     "start": "expo start",
     "reset-project": "node ./scripts/reset-project.js",
+    "preandroid": "node scripts/generate-themes.mjs",
     "android": "expo start --android",
+    "preios": "node scripts/generate-themes.mjs",
     "ios": "expo start --ios",
+    "preweb": "node scripts/generate-themes.mjs",
     "web": "expo start --web",
     "lint": "expo lint"
   },

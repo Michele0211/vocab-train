@@ -1,6 +1,8 @@
 {
   "id": "countries_west_asia",
   "title": "西アジアの国",
+  "categoryId": "geography",
+  "categoryTitle": "地理",
   "answers": [
     "サウジアラビア",
     "アラブ首長国連邦",

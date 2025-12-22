@@ -1,6 +1,8 @@
 {
     "id": "sea_asia_countries",
     "title": "東南アジアの国",
+    "categoryId": "geography",
+    "categoryTitle": "地理",
     "answers": [
       "インドネシア",
       "タイ",

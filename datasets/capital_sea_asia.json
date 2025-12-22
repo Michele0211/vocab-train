@@ -1,6 +1,8 @@
 {
   "id": "capital_sea_asia",
   "title": "東南アジアの首都名",
+  "categoryId": "geography",
+  "categoryTitle": "地理",
   "answers": [
     "ジャカルタ",
     "バンコク",

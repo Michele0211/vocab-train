@@ -38,6 +38,9 @@ yarn-error.*
 
 app-example
 
+# generated themes
+datasets/themes.generated.ts
+
 # generated native folders
 /ios
 /android
