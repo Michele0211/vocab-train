@@ -161,14 +161,14 @@ async function main() {
     if (before == null) {
       createdOrUpdated += 1;
       // eslint-disable-next-line no-console
-      console.log(`CREATED: datasets/${t.id}.json`);
+      console.log(`CREATED: datasets/${t.id}.json (answers=${t.answers.length})`);
     } else if (before !== afterContent) {
       createdOrUpdated += 1;
       // eslint-disable-next-line no-console
-      console.log(`UPDATED: datasets/${t.id}.json`);
+      console.log(`UPDATED: datasets/${t.id}.json (answers=${t.answers.length})`);
     } else {
       // eslint-disable-next-line no-console
-      console.log(`UNCHANGED: datasets/${t.id}.json`);
+      console.log(`UNCHANGED: datasets/${t.id}.json (answers=${t.answers.length})`);
     }
   }
 
