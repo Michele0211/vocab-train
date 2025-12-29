@@ -15,6 +15,9 @@ function asTrimmedString(x) {
 }
 
 export async function fetchDatasets() {
+  // NOTE:
+  // - ここは「生成時」にだけ呼ばれる。アプリ実行時には外部通信しない。
+  // - 将来API仕様が変わっても、失敗理由が分かるようにエラーを厚めにしている。
   const controller = new AbortController();
   const timeout = setTimeout(() => controller.abort(), 30_000);
 
@@ -44,6 +47,7 @@ export async function fetchDatasets() {
   const byIso2 = new Map(); // ISO2 -> entity
 
   for (const c of data) {
+    // cca2（ISO2）が無い/不正なものは canonical としてキーにできないので除外する
     const iso2 = asTrimmedString(c?.cca2);
     if (!iso2) continue;
     if (!ISO2_RE.test(iso2)) continue;
@@ -52,6 +56,7 @@ export async function fetchDatasets() {
       throw new Error(`REST Countries: cca2 が重複しています: "${iso2}"`);
     }
 
+    // 英語名は canonical として必須。日本語名はあれば使い、無ければ英語で埋める。
     const labelEn = asTrimmedString(c?.name?.common);
     const labelJa =
       asTrimmedString(c?.translations?.jpn?.common) || labelEn;
@@ -61,6 +66,7 @@ export async function fetchDatasets() {
       continue;
     }
 
+    // continent/subregion は無い場合があるので null に落とす
     const continent = asTrimmedString(c?.continents?.[0]) || null;
     const region = asTrimmedString(c?.subregion) || null;
     const landlocked = Boolean(c?.landlocked);

@@ -45,8 +45,10 @@ async function main() {
     return;
   }
 
+  // 重要:
+  // - themes の元データは「datasets/ 直下の *.json」だけを対象にする
+  // - canonical 辞書は datasets/canonical/ に出す運用なので、ここには混ざらない（スキップ判定不要）
   const jsonFiles = entries
-    // themes are only datasets/*.json (top-level). Subdirs like datasets/canonical are excluded.
     .filter((d) => d.isFile() && d.name.endsWith('.json'))
     .map((d) => d.name)
     .sort((a, b) => a.localeCompare(b));

@@ -3,20 +3,44 @@ import path from 'node:path';
 
 import { SOURCES } from './sources/index.mjs';
 
+/**
+ * scripts/generate-datasets.mjs
+ *
+ * 目的:
+ * - 「テーマ用 datasets（datasets/*.json）」と「canonical辞書（datasets/canonical/*.json）」を
+ *   生成時（Node）に作る。アプリ実行時に外部通信しない。
+ *
+ * 入力:
+ * - scripts/sources/* のモジュール群
+ *   - fetchThemes(): ThemeSpec[] を返す（テーマ=クイズ用、answersを持つ）
+ *   - fetchDatasets(): DatasetSpec[] を返す（canonical辞書、entities等を持つ）
+ *
+ * 出力:
+ * - datasets/{themeId}.json（テーマ）
+ * - datasets/canonical/{datasetId}.json（canonical）
+ *
+ * 品質ゲート:
+ * - 形式不正・重複・表記ゆれがあれば process.exitCode=1 にして終了（中途半端な生成はしない）
+ * - 書き込みは tmp→rename の atomic にして壊れたファイルを残さない
+ */
+
 const SNAKE_CASE_RE = /^[a-z][a-z0-9]*(?:_[a-z0-9]+)*$/;
 
 function warn(message) {
+  // 警告: 自動補正や軽微な整形を行った場合に出す（運用で気づけるようにする）
   // eslint-disable-next-line no-console
   console.warn(`WARN: ${message}`);
 }
 
 function fail(message) {
+  // エラー: データ品質に問題がある（生成を止める）
   // eslint-disable-next-line no-console
   console.error(`ERROR: ${message}`);
   process.exitCode = 1;
 }
 
 function uniqPreserveOrder(arr) {
+  // 元の順序を保ったまま重複を除去する（answersの安定化用）
   const out = [];
   const seen = new Set();
   for (const x of arr) {
@@ -28,6 +52,7 @@ function uniqPreserveOrder(arr) {
 }
 
 function sanitizeAnswers(answers, ctx) {
+  // answers の最小整形: trim + 空除去 + 重複除去（正規化は別責務なのでここではしない）
   if (!Array.isArray(answers)) {
     fail(`${ctx}: answers が配列ではありません`);
     return [];
@@ -40,10 +65,14 @@ function sanitizeAnswers(answers, ctx) {
 }
 
 function isObject(x) {
+  // 将来の拡張用（現状は残しているが必須ではない）
   return x != null && typeof x === 'object';
 }
 
 async function writeJsonAtomic(targetFile, obj) {
+  // atomic write:
+  // 1) .tmp に書き出す
+  // 2) rename で置き換える（途中で落ちても壊れたjsonが残りにくい）
   const dir = path.dirname(targetFile);
   const base = path.basename(targetFile);
   const tmp = path.join(dir, `.${base}.tmp-${process.pid}-${Date.now()}`);
@@ -61,12 +90,13 @@ async function main() {
   const datasetsDir = path.join(repoRoot, 'datasets');
   const canonicalDir = path.join(datasetsDir, 'canonical');
 
-  // collect
+  // 1) collect: 全sourceから ThemeSpec / DatasetSpec を集める
   const collectedThemes = [];
   const collectedDatasets = [];
   for (const mod of SOURCES) {
     const keys = Object.keys(mod);
 
+    // ThemeSpec（クイズ用）
     if (typeof mod.fetchThemes === 'function') {
       const themes = await mod.fetchThemes();
       if (!Array.isArray(themes)) {
@@ -76,6 +106,7 @@ async function main() {
       collectedThemes.push(...themes);
     }
 
+    // DatasetSpec（canonical辞書用）
     if (typeof mod.fetchDatasets === 'function') {
       const datasets = await mod.fetchDatasets();
       if (!Array.isArray(datasets)) {
@@ -91,9 +122,11 @@ async function main() {
     }
   }
 
+  // 収集段階でエラーが出たら以降は走らない
   if (process.exitCode === 1) return;
 
-  // validate + normalize (themes)
+  // 2) validate + normalize (themes)
+  // - id重複を themes/canonical 間でも許さない（衝突すると上書き事故になるため）
   const byId = new Map(); // id -> ThemeSpec/DatasetSpec
   const categoryTitleById = new Map(); // categoryId -> categoryTitle
   const themesOut = [];
@@ -106,6 +139,7 @@ async function main() {
 
     const ctx = `ThemeSpec(id=${JSON.stringify(id)})`;
 
+    // 必須フィールドチェック（不正なら fail して次へ）
     if (typeof id !== 'string' || id.trim() === '') {
       fail(`${ctx}: id が空です`);
       continue;
@@ -135,6 +169,7 @@ async function main() {
       continue;
     }
 
+    // categoryId に対する categoryTitle の表記ゆれは許さない（品質ゲート）
     const existingTitle = categoryTitleById.get(categoryId);
     if (existingTitle && existingTitle !== categoryTitle) {
       fail(
@@ -162,7 +197,8 @@ async function main() {
     themesOut.push(out);
   }
 
-  // validate + normalize (canonical datasets)
+  // 3) validate + normalize (canonical datasets)
+  // canonical は「テーマ」ではないので datasets/canonical に出す。
   const ISO2_RE = /^[A-Z]{2}$/;
   const datasetsOut = [];
 
@@ -189,6 +225,7 @@ async function main() {
       continue;
     }
 
+    // 現状 canonical は countries_base のみ対応（増やす場合はここに追加）
     if (id === 'countries_base') {
       const entities = d?.entities;
       if (!Array.isArray(entities) || entities.length === 0) {
@@ -201,6 +238,7 @@ async function main() {
 
       const cleanedEntities = [];
       for (const e of entities) {
+        // ISO2は「キー」になるので厳格にチェック
         const iso2 = typeof e?.id === 'string' ? e.id.trim() : '';
         if (!ISO2_RE.test(iso2)) {
           fail(`${ctx}: entities[].id が ISO2 ではありません: "${iso2}"`);
@@ -220,6 +258,7 @@ async function main() {
         }
         if (labelJa) jaCount += 1;
 
+        // 欠損がある場合でも、アプリ側で扱いやすいように形を固定して格納する
         cleanedEntities.push({
           id: iso2,
           label_ja: labelJa || labelEn,
@@ -254,10 +293,10 @@ async function main() {
 
   if (process.exitCode === 1) return;
 
-  // write (themes + canonical datasets)
+  // 4) write: themes と canonical を出力先フォルダごとに分けて書く
   let createdOrUpdated = 0;
 
-  // themes -> datasets/{id}.json
+  // 4-a) themes -> datasets/{id}.json
   for (const t of themesOut.sort((a, b) => a.id.localeCompare(b.id))) {
     const outPath = path.join(datasetsDir, `${t.id}.json`);
     let before = null;
@@ -284,7 +323,7 @@ async function main() {
     }
   }
 
-  // canonical -> datasets/canonical/{id}.json
+  // 4-b) canonical -> datasets/canonical/{id}.json
   for (const t of datasetsOut.sort((a, b) => a.id.localeCompare(b.id))) {
     const outPath = path.join(canonicalDir, `${t.id}.json`);
     let before = null;
