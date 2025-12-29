@@ -46,6 +46,7 @@ async function main() {
   }
 
   const jsonFiles = entries
+    // themes are only datasets/*.json (top-level). Subdirs like datasets/canonical are excluded.
     .filter((d) => d.isFile() && d.name.endsWith('.json'))
     .map((d) => d.name)
     .sort((a, b) => a.localeCompare(b));

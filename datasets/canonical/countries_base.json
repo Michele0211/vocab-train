@@ -1,0 +1,2007 @@
+{
+  "id": "countries_base",
+  "schema": "countries_base_v1",
+  "generatedAt": "2025-12-29T06:05:21.079Z",
+  "entities": [
+    {
+      "id": "AD",
+      "label_ja": "アンドラ",
+      "label_en": "Andorra",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": true
+    },
+    {
+      "id": "AE",
+      "label_ja": "アラブ首長国連邦",
+      "label_en": "United Arab Emirates",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "AF",
+      "label_ja": "アフガニスタン",
+      "label_en": "Afghanistan",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": true
+    },
+    {
+      "id": "AG",
+      "label_ja": "アンティグア・バーブーダ",
+      "label_en": "Antigua and Barbuda",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "AI",
+      "label_ja": "アンギラ",
+      "label_en": "Anguilla",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "AL",
+      "label_ja": "アルバニア",
+      "label_en": "Albania",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": false
+    },
+    {
+      "id": "AM",
+      "label_ja": "アルメニア",
+      "label_en": "Armenia",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": true
+    },
+    {
+      "id": "AO",
+      "label_ja": "アンゴラ",
+      "label_en": "Angola",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "AQ",
+      "label_ja": "南極",
+      "label_en": "Antarctica",
+      "continent": "Antarctica",
+      "region": null,
+      "landlocked": false
+    },
+    {
+      "id": "AR",
+      "label_ja": "アルゼンチン",
+      "label_en": "Argentina",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "AS",
+      "label_ja": "アメリカ領サモア",
+      "label_en": "American Samoa",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "AT",
+      "label_ja": "オーストリア",
+      "label_en": "Austria",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "landlocked": true
+    },
+    {
+      "id": "AU",
+      "label_ja": "オーストラリア",
+      "label_en": "Australia",
+      "continent": "Oceania",
+      "region": "Australia and New Zealand",
+      "landlocked": false
+    },
+    {
+      "id": "AW",
+      "label_ja": "アルバ",
+      "label_en": "Aruba",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "AX",
+      "label_ja": "オーランド諸島",
+      "label_en": "Åland Islands",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "AZ",
+      "label_ja": "アゼルバイジャン",
+      "label_en": "Azerbaijan",
+      "continent": "Europe",
+      "region": "Western Asia",
+      "landlocked": true
+    },
+    {
+      "id": "BA",
+      "label_ja": "ボスニア・ヘルツェゴビナ",
+      "label_en": "Bosnia and Herzegovina",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": false
+    },
+    {
+      "id": "BB",
+      "label_ja": "バルバドス",
+      "label_en": "Barbados",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "BD",
+      "label_ja": "バングラデシュ",
+      "label_en": "Bangladesh",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "BE",
+      "label_ja": "ベルギー",
+      "label_en": "Belgium",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": false
+    },
+    {
+      "id": "BF",
+      "label_ja": "ブルキナファソ",
+      "label_en": "Burkina Faso",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": true
+    },
+    {
+      "id": "BG",
+      "label_ja": "ブルガリア",
+      "label_en": "Bulgaria",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": false
+    },
+    {
+      "id": "BH",
+      "label_ja": "バーレーン",
+      "label_en": "Bahrain",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "BI",
+      "label_ja": "ブルンジ",
+      "label_en": "Burundi",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "BJ",
+      "label_ja": "ベナン",
+      "label_en": "Benin",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "BL",
+      "label_ja": "サン・バルテルミー",
+      "label_en": "Saint Barthélemy",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "BM",
+      "label_ja": "バミューダ",
+      "label_en": "Bermuda",
+      "continent": "North America",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "BN",
+      "label_ja": "ブルネイ・ダルサラーム",
+      "label_en": "Brunei",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "BO",
+      "label_ja": "ボリビア多民族国",
+      "label_en": "Bolivia",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": true
+    },
+    {
+      "id": "BQ",
+      "label_ja": "ボネール、シント・ユースタティウスおよびサバ",
+      "label_en": "Caribbean Netherlands",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "BR",
+      "label_ja": "ブラジル",
+      "label_en": "Brazil",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "BS",
+      "label_ja": "バハマ",
+      "label_en": "Bahamas",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "BT",
+      "label_ja": "ブータン",
+      "label_en": "Bhutan",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": true
+    },
+    {
+      "id": "BV",
+      "label_ja": "ブーベ島",
+      "label_en": "Bouvet Island",
+      "continent": "Antarctica",
+      "region": null,
+      "landlocked": false
+    },
+    {
+      "id": "BW",
+      "label_ja": "ボツワナ",
+      "label_en": "Botswana",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "BY",
+      "label_ja": "ベラルーシ",
+      "label_en": "Belarus",
+      "continent": "Europe",
+      "region": "Eastern Europe",
+      "landlocked": true
+    },
+    {
+      "id": "BZ",
+      "label_ja": "ベリーズ",
+      "label_en": "Belize",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "CA",
+      "label_ja": "カナダ",
+      "label_en": "Canada",
+      "continent": "North America",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "CC",
+      "label_ja": "ココス（キーリング）諸島",
+      "label_en": "Cocos (Keeling) Islands",
+      "continent": "Asia",
+      "region": "Australia and New Zealand",
+      "landlocked": false
+    },
+    {
+      "id": "CD",
+      "label_ja": "コンゴ民主共和国",
+      "label_en": "DR Congo",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "CF",
+      "label_ja": "中央アフリカ共和国",
+      "label_en": "Central African Republic",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": true
+    },
+    {
+      "id": "CG",
+      "label_ja": "コンゴ共和国",
+      "label_en": "Republic of the Congo",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "CH",
+      "label_ja": "スイス",
+      "label_en": "Switzerland",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": true
+    },
+    {
+      "id": "CI",
+      "label_ja": "コートジボワール",
+      "label_en": "Ivory Coast",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "CK",
+      "label_ja": "クック諸島",
+      "label_en": "Cook Islands",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "CL",
+      "label_ja": "チリ",
+      "label_en": "Chile",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "CM",
+      "label_ja": "カメルーン",
+      "label_en": "Cameroon",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "CN",
+      "label_ja": "中国",
+      "label_en": "China",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "CO",
+      "label_ja": "コロンビア",
+      "label_en": "Colombia",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "CR",
+      "label_ja": "コスタリカ",
+      "label_en": "Costa Rica",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "CU",
+      "label_ja": "キューバ",
+      "label_en": "Cuba",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "CV",
+      "label_ja": "カーボベルデ",
+      "label_en": "Cape Verde",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "CW",
+      "label_ja": "Curaçao",
+      "label_en": "Curaçao",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "CX",
+      "label_ja": "クリスマス島",
+      "label_en": "Christmas Island",
+      "continent": "Asia",
+      "region": "Australia and New Zealand",
+      "landlocked": false
+    },
+    {
+      "id": "CY",
+      "label_ja": "キプロス",
+      "label_en": "Cyprus",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "CZ",
+      "label_ja": "チェコ",
+      "label_en": "Czechia",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "landlocked": true
+    },
+    {
+      "id": "DE",
+      "label_ja": "ドイツ",
+      "label_en": "Germany",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": false
+    },
+    {
+      "id": "DJ",
+      "label_ja": "ジブチ",
+      "label_en": "Djibouti",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "DK",
+      "label_ja": "デンマーク",
+      "label_en": "Denmark",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "DM",
+      "label_ja": "ドミニカ国",
+      "label_en": "Dominica",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "DO",
+      "label_ja": "ドミニカ共和国",
+      "label_en": "Dominican Republic",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "DZ",
+      "label_ja": "アルジェリア",
+      "label_en": "Algeria",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "EC",
+      "label_ja": "エクアドル",
+      "label_en": "Ecuador",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "EE",
+      "label_ja": "エストニア",
+      "label_en": "Estonia",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "EG",
+      "label_ja": "エジプト",
+      "label_en": "Egypt",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "EH",
+      "label_ja": "西サハラ",
+      "label_en": "Western Sahara",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "ER",
+      "label_ja": "エリトリア",
+      "label_en": "Eritrea",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "ES",
+      "label_ja": "スペイン",
+      "label_en": "Spain",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "ET",
+      "label_ja": "エチオピア",
+      "label_en": "Ethiopia",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "FI",
+      "label_ja": "フィンランド",
+      "label_en": "Finland",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "FJ",
+      "label_ja": "フィジー",
+      "label_en": "Fiji",
+      "continent": "Oceania",
+      "region": "Melanesia",
+      "landlocked": false
+    },
+    {
+      "id": "FK",
+      "label_ja": "フォークランド（マルビナス）諸島",
+      "label_en": "Falkland Islands",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "FM",
+      "label_ja": "ミクロネシア連邦",
+      "label_en": "Micronesia",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "FO",
+      "label_ja": "フェロー諸島",
+      "label_en": "Faroe Islands",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "FR",
+      "label_ja": "フランス",
+      "label_en": "France",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": false
+    },
+    {
+      "id": "GA",
+      "label_ja": "ガボン",
+      "label_en": "Gabon",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "GB",
+      "label_ja": "イギリス",
+      "label_en": "United Kingdom",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "GD",
+      "label_ja": "グレナダ",
+      "label_en": "Grenada",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "GE",
+      "label_ja": "グルジア",
+      "label_en": "Georgia",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "GF",
+      "label_ja": "フランス領ギアナ",
+      "label_en": "French Guiana",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "GG",
+      "label_ja": "ガーンジー",
+      "label_en": "Guernsey",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "GH",
+      "label_ja": "ガーナ",
+      "label_en": "Ghana",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "GI",
+      "label_ja": "ジブラルタル",
+      "label_en": "Gibraltar",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "GL",
+      "label_ja": "グリーンランド",
+      "label_en": "Greenland",
+      "continent": "North America",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "GM",
+      "label_ja": "ガンビア",
+      "label_en": "Gambia",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "GN",
+      "label_ja": "ギニア",
+      "label_en": "Guinea",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "GP",
+      "label_ja": "グアドループ",
+      "label_en": "Guadeloupe",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "GQ",
+      "label_ja": "赤道ギニア",
+      "label_en": "Equatorial Guinea",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "GR",
+      "label_ja": "ギリシャ",
+      "label_en": "Greece",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "GS",
+      "label_ja": "サウスジョージア・サウスサンドウィッチ諸島",
+      "label_en": "South Georgia",
+      "continent": "Antarctica",
+      "region": null,
+      "landlocked": false
+    },
+    {
+      "id": "GT",
+      "label_ja": "グアテマラ",
+      "label_en": "Guatemala",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "GU",
+      "label_ja": "グアム",
+      "label_en": "Guam",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "GW",
+      "label_ja": "ギニアビサウ",
+      "label_en": "Guinea-Bissau",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "GY",
+      "label_ja": "ガイアナ",
+      "label_en": "Guyana",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "HK",
+      "label_ja": "香港",
+      "label_en": "Hong Kong",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "HM",
+      "label_ja": "ハード島とマクドナルド諸島",
+      "label_en": "Heard Island and McDonald Islands",
+      "continent": "Antarctica",
+      "region": null,
+      "landlocked": false
+    },
+    {
+      "id": "HN",
+      "label_ja": "ホンジュラス",
+      "label_en": "Honduras",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "HR",
+      "label_ja": "クロアチア",
+      "label_en": "Croatia",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": false
+    },
+    {
+      "id": "HT",
+      "label_ja": "ハイチ",
+      "label_en": "Haiti",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "HU",
+      "label_ja": "ハンガリー",
+      "label_en": "Hungary",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "landlocked": true
+    },
+    {
+      "id": "ID",
+      "label_ja": "インドネシア",
+      "label_en": "Indonesia",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "IE",
+      "label_ja": "アイルランド",
+      "label_en": "Ireland",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "IL",
+      "label_ja": "イスラエル",
+      "label_en": "Israel",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "IM",
+      "label_ja": "マン島",
+      "label_en": "Isle of Man",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "IN",
+      "label_ja": "インド",
+      "label_en": "India",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "IO",
+      "label_ja": "イギリス領インド洋地域",
+      "label_en": "British Indian Ocean Territory",
+      "continent": "Asia",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "IQ",
+      "label_ja": "イラク",
+      "label_en": "Iraq",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "IR",
+      "label_ja": "イラン・イスラム共和国",
+      "label_en": "Iran",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "IS",
+      "label_ja": "アイスランド",
+      "label_en": "Iceland",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "IT",
+      "label_ja": "イタリア",
+      "label_en": "Italy",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "JE",
+      "label_ja": "ジャージー",
+      "label_en": "Jersey",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "JM",
+      "label_ja": "ジャマイカ",
+      "label_en": "Jamaica",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "JO",
+      "label_ja": "ヨルダン",
+      "label_en": "Jordan",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "JP",
+      "label_ja": "日本",
+      "label_en": "Japan",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "KE",
+      "label_ja": "ケニア",
+      "label_en": "Kenya",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "KG",
+      "label_ja": "キルギス",
+      "label_en": "Kyrgyzstan",
+      "continent": "Asia",
+      "region": "Central Asia",
+      "landlocked": true
+    },
+    {
+      "id": "KH",
+      "label_ja": "カンボジア",
+      "label_en": "Cambodia",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "KI",
+      "label_ja": "キリバス",
+      "label_en": "Kiribati",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "KM",
+      "label_ja": "コモロ",
+      "label_en": "Comoros",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "KN",
+      "label_ja": "セントクリストファー・ネイビス",
+      "label_en": "Saint Kitts and Nevis",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "KP",
+      "label_ja": "朝鮮民主主義人民共和国",
+      "label_en": "North Korea",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "KR",
+      "label_ja": "韓国",
+      "label_en": "South Korea",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "KW",
+      "label_ja": "クウェート",
+      "label_en": "Kuwait",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "KY",
+      "label_ja": "ケイマン諸島",
+      "label_en": "Cayman Islands",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "KZ",
+      "label_ja": "カザフスタン",
+      "label_en": "Kazakhstan",
+      "continent": "Asia",
+      "region": "Central Asia",
+      "landlocked": true
+    },
+    {
+      "id": "LA",
+      "label_ja": "ラオス人民民主共和国",
+      "label_en": "Laos",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": true
+    },
+    {
+      "id": "LB",
+      "label_ja": "レバノン",
+      "label_en": "Lebanon",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "LC",
+      "label_ja": "セントルシア",
+      "label_en": "Saint Lucia",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "LI",
+      "label_ja": "リヒテンシュタイン",
+      "label_en": "Liechtenstein",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": true
+    },
+    {
+      "id": "LK",
+      "label_ja": "スリランカ",
+      "label_en": "Sri Lanka",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "LR",
+      "label_ja": "リベリア",
+      "label_en": "Liberia",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "LS",
+      "label_ja": "レソト",
+      "label_en": "Lesotho",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "LT",
+      "label_ja": "リトアニア",
+      "label_en": "Lithuania",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "LU",
+      "label_ja": "ルクセンブルク",
+      "label_en": "Luxembourg",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": true
+    },
+    {
+      "id": "LV",
+      "label_ja": "ラトビア",
+      "label_en": "Latvia",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "LY",
+      "label_ja": "リビア",
+      "label_en": "Libya",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "MA",
+      "label_ja": "モロッコ",
+      "label_en": "Morocco",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "MC",
+      "label_ja": "モナコ",
+      "label_en": "Monaco",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": false
+    },
+    {
+      "id": "MD",
+      "label_ja": "モルドバ共和国",
+      "label_en": "Moldova",
+      "continent": "Europe",
+      "region": "Eastern Europe",
+      "landlocked": true
+    },
+    {
+      "id": "ME",
+      "label_ja": "モンテネグロ",
+      "label_en": "Montenegro",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": false
+    },
+    {
+      "id": "MF",
+      "label_ja": "サン・マルタン（フランス領）",
+      "label_en": "Saint Martin",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "MG",
+      "label_ja": "マダガスカル",
+      "label_en": "Madagascar",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "MH",
+      "label_ja": "マーシャル諸島",
+      "label_en": "Marshall Islands",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "MK",
+      "label_ja": "北マケドニア",
+      "label_en": "North Macedonia",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": true
+    },
+    {
+      "id": "ML",
+      "label_ja": "マリ",
+      "label_en": "Mali",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": true
+    },
+    {
+      "id": "MM",
+      "label_ja": "ミャンマー",
+      "label_en": "Myanmar",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "MN",
+      "label_ja": "モンゴル",
+      "label_en": "Mongolia",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": true
+    },
+    {
+      "id": "MO",
+      "label_ja": "マカオ",
+      "label_en": "Macau",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "MP",
+      "label_ja": "北マリアナ諸島",
+      "label_en": "Northern Mariana Islands",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "MQ",
+      "label_ja": "マルティニーク",
+      "label_en": "Martinique",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "MR",
+      "label_ja": "モーリタニア",
+      "label_en": "Mauritania",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "MS",
+      "label_ja": "モントセラト",
+      "label_en": "Montserrat",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "MT",
+      "label_ja": "マルタ",
+      "label_en": "Malta",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "MU",
+      "label_ja": "モーリシャス",
+      "label_en": "Mauritius",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "MV",
+      "label_ja": "モルディブ",
+      "label_en": "Maldives",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "MW",
+      "label_ja": "マラウイ",
+      "label_en": "Malawi",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "MX",
+      "label_ja": "メキシコ",
+      "label_en": "Mexico",
+      "continent": "North America",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "MY",
+      "label_ja": "マレーシア",
+      "label_en": "Malaysia",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "MZ",
+      "label_ja": "モザンビーク",
+      "label_en": "Mozambique",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "NA",
+      "label_ja": "ナミビア",
+      "label_en": "Namibia",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "NC",
+      "label_ja": "ニューカレドニア",
+      "label_en": "New Caledonia",
+      "continent": "Oceania",
+      "region": "Melanesia",
+      "landlocked": false
+    },
+    {
+      "id": "NE",
+      "label_ja": "ニジェール",
+      "label_en": "Niger",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": true
+    },
+    {
+      "id": "NF",
+      "label_ja": "ノーフォーク島",
+      "label_en": "Norfolk Island",
+      "continent": "Oceania",
+      "region": "Australia and New Zealand",
+      "landlocked": false
+    },
+    {
+      "id": "NG",
+      "label_ja": "ナイジェリア",
+      "label_en": "Nigeria",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "NI",
+      "label_ja": "ニカラグア",
+      "label_en": "Nicaragua",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "NL",
+      "label_ja": "オランダ",
+      "label_en": "Netherlands",
+      "continent": "Europe",
+      "region": "Western Europe",
+      "landlocked": false
+    },
+    {
+      "id": "NO",
+      "label_ja": "ノルウェー",
+      "label_en": "Norway",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "NP",
+      "label_ja": "ネパール",
+      "label_en": "Nepal",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": true
+    },
+    {
+      "id": "NR",
+      "label_ja": "ナウル",
+      "label_en": "Nauru",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "NU",
+      "label_ja": "ニウエ",
+      "label_en": "Niue",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "NZ",
+      "label_ja": "ニュージーランド",
+      "label_en": "New Zealand",
+      "continent": "Oceania",
+      "region": "Australia and New Zealand",
+      "landlocked": false
+    },
+    {
+      "id": "OM",
+      "label_ja": "オマーン",
+      "label_en": "Oman",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "PA",
+      "label_ja": "パナマ",
+      "label_en": "Panama",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "PE",
+      "label_ja": "ペルー",
+      "label_en": "Peru",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "PF",
+      "label_ja": "フランス領ポリネシア",
+      "label_en": "French Polynesia",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "PG",
+      "label_ja": "パプアニューギニア",
+      "label_en": "Papua New Guinea",
+      "continent": "Oceania",
+      "region": "Melanesia",
+      "landlocked": false
+    },
+    {
+      "id": "PH",
+      "label_ja": "フィリピン",
+      "label_en": "Philippines",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "PK",
+      "label_ja": "パキスタン",
+      "label_en": "Pakistan",
+      "continent": "Asia",
+      "region": "Southern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "PL",
+      "label_ja": "ポーランド",
+      "label_en": "Poland",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "landlocked": false
+    },
+    {
+      "id": "PM",
+      "label_ja": "サンピエール島・ミクロン島",
+      "label_en": "Saint Pierre and Miquelon",
+      "continent": "North America",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "PN",
+      "label_ja": "ピトケアン",
+      "label_en": "Pitcairn Islands",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "PR",
+      "label_ja": "プエルトリコ",
+      "label_en": "Puerto Rico",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "PS",
+      "label_ja": "パレスチナ",
+      "label_en": "Palestine",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "PT",
+      "label_ja": "ポルトガル",
+      "label_en": "Portugal",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "PW",
+      "label_ja": "パラオ",
+      "label_en": "Palau",
+      "continent": "Oceania",
+      "region": "Micronesia",
+      "landlocked": false
+    },
+    {
+      "id": "PY",
+      "label_ja": "パラグアイ",
+      "label_en": "Paraguay",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": true
+    },
+    {
+      "id": "QA",
+      "label_ja": "カタール",
+      "label_en": "Qatar",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "RE",
+      "label_ja": "レユニオン",
+      "label_en": "Réunion",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "RO",
+      "label_ja": "ルーマニア",
+      "label_en": "Romania",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": false
+    },
+    {
+      "id": "RS",
+      "label_ja": "セルビア",
+      "label_en": "Serbia",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": true
+    },
+    {
+      "id": "RU",
+      "label_ja": "ロシア連邦",
+      "label_en": "Russia",
+      "continent": "Europe",
+      "region": "Eastern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "RW",
+      "label_ja": "ルワンダ",
+      "label_en": "Rwanda",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "SA",
+      "label_ja": "サウジアラビア",
+      "label_en": "Saudi Arabia",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "SB",
+      "label_ja": "ソロモン諸島",
+      "label_en": "Solomon Islands",
+      "continent": "Oceania",
+      "region": "Melanesia",
+      "landlocked": false
+    },
+    {
+      "id": "SC",
+      "label_ja": "セーシェル",
+      "label_en": "Seychelles",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SD",
+      "label_ja": "スーダン",
+      "label_en": "Sudan",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SE",
+      "label_ja": "スウェーデン",
+      "label_en": "Sweden",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "SG",
+      "label_ja": "シンガポール",
+      "label_en": "Singapore",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "SH",
+      "label_ja": "セントヘレナ・アセンションおよびトリスタンダクーニャ",
+      "label_en": "Saint Helena, Ascension and Tristan da Cunha",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SI",
+      "label_ja": "スロベニア",
+      "label_en": "Slovenia",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "landlocked": false
+    },
+    {
+      "id": "SJ",
+      "label_ja": "スヴァールバル諸島およびヤンマイエン島",
+      "label_en": "Svalbard and Jan Mayen",
+      "continent": "Europe",
+      "region": "Northern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "SK",
+      "label_ja": "スロバキア",
+      "label_en": "Slovakia",
+      "continent": "Europe",
+      "region": "Central Europe",
+      "landlocked": true
+    },
+    {
+      "id": "SL",
+      "label_ja": "シエラレオネ",
+      "label_en": "Sierra Leone",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SM",
+      "label_ja": "サンマリノ",
+      "label_en": "San Marino",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": true
+    },
+    {
+      "id": "SN",
+      "label_ja": "セネガル",
+      "label_en": "Senegal",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SO",
+      "label_ja": "ソマリア",
+      "label_en": "Somalia",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SR",
+      "label_ja": "スリナム",
+      "label_en": "Suriname",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "SS",
+      "label_ja": "南スーダン",
+      "label_en": "South Sudan",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": true
+    },
+    {
+      "id": "ST",
+      "label_ja": "サントメ・プリンシペ",
+      "label_en": "São Tomé and Príncipe",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": false
+    },
+    {
+      "id": "SV",
+      "label_ja": "エルサルバドル",
+      "label_en": "El Salvador",
+      "continent": "North America",
+      "region": "Central America",
+      "landlocked": false
+    },
+    {
+      "id": "SX",
+      "label_ja": "シント・マールテン",
+      "label_en": "Sint Maarten",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "SY",
+      "label_ja": "シリア・アラブ共和国",
+      "label_en": "Syria",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "SZ",
+      "label_ja": "スワジランド",
+      "label_en": "Eswatini",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "TC",
+      "label_ja": "タークス・カイコス諸島",
+      "label_en": "Turks and Caicos Islands",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "TD",
+      "label_ja": "チャド",
+      "label_en": "Chad",
+      "continent": "Africa",
+      "region": "Middle Africa",
+      "landlocked": true
+    },
+    {
+      "id": "TF",
+      "label_ja": "フランス領南方・南極地域",
+      "label_en": "French Southern and Antarctic Lands",
+      "continent": "Antarctica",
+      "region": null,
+      "landlocked": false
+    },
+    {
+      "id": "TG",
+      "label_ja": "トーゴ",
+      "label_en": "Togo",
+      "continent": "Africa",
+      "region": "Western Africa",
+      "landlocked": false
+    },
+    {
+      "id": "TH",
+      "label_ja": "タイ",
+      "label_en": "Thailand",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "TJ",
+      "label_ja": "タジキスタン",
+      "label_en": "Tajikistan",
+      "continent": "Asia",
+      "region": "Central Asia",
+      "landlocked": true
+    },
+    {
+      "id": "TK",
+      "label_ja": "トケラウ",
+      "label_en": "Tokelau",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "TL",
+      "label_ja": "東ティモール",
+      "label_en": "Timor-Leste",
+      "continent": "Oceania",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "TM",
+      "label_ja": "トルクメニスタン",
+      "label_en": "Turkmenistan",
+      "continent": "Asia",
+      "region": "Central Asia",
+      "landlocked": true
+    },
+    {
+      "id": "TN",
+      "label_ja": "チュニジア",
+      "label_en": "Tunisia",
+      "continent": "Africa",
+      "region": "Northern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "TO",
+      "label_ja": "トンガ",
+      "label_en": "Tonga",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "TR",
+      "label_ja": "トルコ",
+      "label_en": "Turkey",
+      "continent": "Europe",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "TT",
+      "label_ja": "トリニダード・トバゴ",
+      "label_en": "Trinidad and Tobago",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "TV",
+      "label_ja": "ツバル",
+      "label_en": "Tuvalu",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "TW",
+      "label_ja": "台湾",
+      "label_en": "Taiwan",
+      "continent": "Asia",
+      "region": "Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "TZ",
+      "label_ja": "タンザニア",
+      "label_en": "Tanzania",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "UA",
+      "label_ja": "ウクライナ",
+      "label_en": "Ukraine",
+      "continent": "Europe",
+      "region": "Eastern Europe",
+      "landlocked": false
+    },
+    {
+      "id": "UG",
+      "label_ja": "ウガンダ",
+      "label_en": "Uganda",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "UM",
+      "label_ja": "合衆国領有小離島",
+      "label_en": "United States Minor Outlying Islands",
+      "continent": "Oceania",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "US",
+      "label_ja": "アメリカ合衆国",
+      "label_en": "United States",
+      "continent": "North America",
+      "region": "North America",
+      "landlocked": false
+    },
+    {
+      "id": "UY",
+      "label_ja": "ウルグアイ",
+      "label_en": "Uruguay",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "UZ",
+      "label_ja": "ウズベキスタン",
+      "label_en": "Uzbekistan",
+      "continent": "Asia",
+      "region": "Central Asia",
+      "landlocked": true
+    },
+    {
+      "id": "VA",
+      "label_ja": "バチカン市国",
+      "label_en": "Vatican City",
+      "continent": "Europe",
+      "region": "Southern Europe",
+      "landlocked": true
+    },
+    {
+      "id": "VC",
+      "label_ja": "セントビンセントおよびグレナディーン諸島",
+      "label_en": "Saint Vincent and the Grenadines",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "VE",
+      "label_ja": "ベネズエラ・ボリバル共和国",
+      "label_en": "Venezuela",
+      "continent": "South America",
+      "region": "South America",
+      "landlocked": false
+    },
+    {
+      "id": "VG",
+      "label_ja": "イギリス領ヴァージン諸島",
+      "label_en": "British Virgin Islands",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "VI",
+      "label_ja": "アメリカ領ヴァージン諸島",
+      "label_en": "United States Virgin Islands",
+      "continent": "North America",
+      "region": "Caribbean",
+      "landlocked": false
+    },
+    {
+      "id": "VN",
+      "label_ja": "ベトナム",
+      "label_en": "Vietnam",
+      "continent": "Asia",
+      "region": "South-Eastern Asia",
+      "landlocked": false
+    },
+    {
+      "id": "VU",
+      "label_ja": "バヌアツ",
+      "label_en": "Vanuatu",
+      "continent": "Oceania",
+      "region": "Melanesia",
+      "landlocked": false
+    },
+    {
+      "id": "WF",
+      "label_ja": "ウォリス・フツナ",
+      "label_en": "Wallis and Futuna",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "WS",
+      "label_ja": "サモア",
+      "label_en": "Samoa",
+      "continent": "Oceania",
+      "region": "Polynesia",
+      "landlocked": false
+    },
+    {
+      "id": "XK",
+      "label_ja": "Kosovo",
+      "label_en": "Kosovo",
+      "continent": "Europe",
+      "region": "Southeast Europe",
+      "landlocked": true
+    },
+    {
+      "id": "YE",
+      "label_ja": "イエメン",
+      "label_en": "Yemen",
+      "continent": "Asia",
+      "region": "Western Asia",
+      "landlocked": false
+    },
+    {
+      "id": "YT",
+      "label_ja": "マヨット",
+      "label_en": "Mayotte",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "ZA",
+      "label_ja": "南アフリカ",
+      "label_en": "South Africa",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "landlocked": false
+    },
+    {
+      "id": "ZM",
+      "label_ja": "ザンビア",
+      "label_en": "Zambia",
+      "continent": "Africa",
+      "region": "Eastern Africa",
+      "landlocked": true
+    },
+    {
+      "id": "ZW",
+      "label_ja": "ジンバブエ",
+      "label_en": "Zimbabwe",
+      "continent": "Africa",
+      "region": "Southern Africa",
+      "landlocked": true
+    }
+  ]
+}
