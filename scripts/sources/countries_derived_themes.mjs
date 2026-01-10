@@ -7,6 +7,9 @@
  *
  * ルール（決定論的）:
  * - continent 別 / subregion 別 / landlocked 別 でグルーピング
+ * - （追加）initial（頭文字）別でグルーピング
+ *   - char: 先頭1文字（表示上の文字）
+ *   - row: 五十音の行（あ行/か行/...） ※簡易判定でOK
  * - answers は label_ja を使う（空は除外）
  * - answers は重複除去→昇順ソート（安定性）
  * - answers.length < 10 のテーマは生成しない
@@ -114,6 +117,73 @@ function initialToIdToken(initial) {
   return `u${padded}`;
 }
 
+/**
+ * 五十音「行」判定用に、1文字をできるだけ揃える。
+ * - NFKC は getInitial 側で済んでいる前提だが、念のためここでも適用
+ * - カタカナ→ひらがな
+ * - 濁点/半濁点は NFD で分解して除去（が→か、ぱ→は）
+ * - 小書き（ぁ等）は大きい仮名に寄せる
+ */
+function normalizeKanaForRow(ch) {
+  if (typeof ch !== 'string') return '';
+  const s = ch.normalize('NFKC').trim();
+  if (!s) return '';
+
+  const cp = s.codePointAt(0);
+  if (cp == null) return '';
+
+  // カタカナ→ひらがな（U+30A1..U+30F6 を -0x60 する）
+  let hira = '';
+  if (cp >= 0x30a1 && cp <= 0x30f6) {
+    hira = String.fromCodePoint(cp - 0x60);
+  } else {
+    hira = String.fromCodePoint(cp);
+  }
+
+  // 濁点/半濁点を除去（NFD: が / ぱ の結合文字を落とす）
+  const decomp = hira.normalize('NFD').replace(/[\u3099\u309A]/g, '').normalize('NFC');
+
+  const SMALL_TO_BIG = {
+    ぁ: 'あ',
+    ぃ: 'い',
+    ぅ: 'う',
+    ぇ: 'え',
+    ぉ: 'お',
+    ゃ: 'や',
+    ゅ: 'ゆ',
+    ょ: 'よ',
+    っ: 'つ',
+    ゎ: 'わ',
+  };
+  return SMALL_TO_BIG[decomp] ?? decomp;
+}
+
+const ROWS = [
+  { token: 'a', nameJa: 'あ行', rep: 'ア', chars: 'あいうえおゔ' }, // ヴは暫定であ行に寄せる
+  { token: 'ka', nameJa: 'か行', rep: 'カ', chars: 'かきくけこ' },
+  { token: 'sa', nameJa: 'さ行', rep: 'サ', chars: 'さしすせそ' },
+  { token: 'ta', nameJa: 'た行', rep: 'タ', chars: 'たちつてと' },
+  { token: 'na', nameJa: 'な行', rep: 'ナ', chars: 'なにぬねの' },
+  { token: 'ha', nameJa: 'は行', rep: 'ハ', chars: 'はひふへほ' },
+  { token: 'ma', nameJa: 'ま行', rep: 'マ', chars: 'まみむめも' },
+  { token: 'ya', nameJa: 'や行', rep: 'ヤ', chars: 'やゆよ' },
+  { token: 'ra', nameJa: 'ら行', rep: 'ラ', chars: 'らりるれろ' },
+  { token: 'wa', nameJa: 'わ行', rep: 'ワ', chars: 'わを' },
+];
+
+function getRowMetaFromInitial(initialChar) {
+  const hira = normalizeKanaForRow(initialChar);
+  if (!hira) return null;
+  // ひらがな以外（英字など）は行テーマ対象外
+  const cp = hira.codePointAt(0);
+  if (cp == null || cp < 0x3040 || cp > 0x309f) return null;
+
+  for (const row of ROWS) {
+    if (row.chars.includes(hira)) return row;
+  }
+  return null;
+}
+
 function slugifySnake(value) {
   // "South-Eastern Asia" -> "south_eastern_asia"
   return String(value)
@@ -166,16 +236,21 @@ export async function fetchThemes() {
   const byContinent = new Map(); // continent -> string[]
   const bySubregion = new Map(); // subregion -> string[]
   const byLandlocked = new Map(); // boolean -> string[]
-  const byInitial = new Map(); // initial -> string[]
+  const byInitialChar = new Map(); // initial(char) -> string[]
+  const byInitialRow = new Map(); // rowToken -> string[]
 
   for (const e of entities) {
+    // UN加盟国に寄せる（欠損/null/false は除外）
+    if (e?.unMember !== true) continue;
+
     const labelJa = typeof e?.label_ja === 'string' ? e.label_ja.trim() : '';
     if (!labelJa) continue;
 
     const continent = typeof e?.continent === 'string' ? e.continent : null;
     const subregion = typeof e?.region === 'string' ? e.region : null; // canonical uses "region" for subregion
     const landlockedRaw = e?.landlocked;
-    const initial = getInitial(labelJa);
+    const initialChar = getInitial(labelJa);
+    const rowMeta = initialChar ? getRowMetaFromInitial(initialChar) : null;
 
     if (continent) {
       const arr = byContinent.get(continent) ?? [];
@@ -193,10 +268,15 @@ export async function fetchThemes() {
       arr.push(labelJa);
       byLandlocked.set(landlockedRaw, arr);
     }
-    if (initial) {
-      const arr = byInitial.get(initial) ?? [];
+    if (initialChar) {
+      const arr = byInitialChar.get(initialChar) ?? [];
       arr.push(labelJa);
-      byInitial.set(initial, arr);
+      byInitialChar.set(initialChar, arr);
+    }
+    if (rowMeta) {
+      const arr = byInitialRow.get(rowMeta.token) ?? [];
+      arr.push(labelJa);
+      byInitialRow.set(rowMeta.token, arr);
     }
   }
 
@@ -212,7 +292,7 @@ export async function fetchThemes() {
 
     themes.push({
       id: `countries_continent_${slug}`,
-      title: `${label}の国`,
+      title: `${label}の国連加盟国`,
       categoryId,
       categoryTitle,
       answers,
@@ -229,7 +309,7 @@ export async function fetchThemes() {
 
     themes.push({
       id: `countries_subregion_${slug}`,
-      title: `${label}の国`,
+      title: `${label}の国連加盟国`,
       categoryId,
       categoryTitle,
       answers,
@@ -243,7 +323,7 @@ export async function fetchThemes() {
 
     themes.push({
       id: `countries_landlocked_${isLandlocked ? 'true' : 'false'}`,
-      title: isLandlocked ? '内陸国' : '沿岸国',
+      title: isLandlocked ? '内陸の国連加盟国' : '沿岸の国連加盟国',
       categoryId,
       categoryTitle,
       answers,
@@ -251,7 +331,8 @@ export async function fetchThemes() {
   }
 
   // d) initial themes
-  for (const [initial, names] of byInitial.entries()) {
+  // d-1) initial themes (char)
+  for (const [initial, names] of byInitialChar.entries()) {
     const answers = uniqSortedJa(names);
     if (answers.length < 10) continue;
 
@@ -259,8 +340,24 @@ export async function fetchThemes() {
     if (!token) continue;
 
     themes.push({
-      id: `countries_initial_${token}`,
-      title: `${initial}で始まる国`,
+      id: `countries_initial_char_${token}`,
+      title: `${initial}で始まる国連加盟国`,
+      categoryId,
+      categoryTitle,
+      answers,
+    });
+  }
+
+  // d-2) initial themes (row)
+  for (const row of ROWS) {
+    const names = byInitialRow.get(row.token);
+    if (!names) continue;
+    const answers = uniqSortedJa(names);
+    if (answers.length < 10) continue;
+
+    themes.push({
+      id: `countries_initial_row_${row.token}`,
+      title: `${row.rep}（${row.nameJa}）で始まる国連加盟国`,
       categoryId,
       categoryTitle,
       answers,

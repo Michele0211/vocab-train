@@ -266,6 +266,8 @@ async function main() {
           continent: typeof e?.continent === 'string' ? e.continent : null,
           region: typeof e?.region === 'string' ? e.region : null,
           landlocked: Boolean(e?.landlocked),
+          // 欠損を false にしない（存在しない場合は null）
+          unMember: typeof e?.unMember === 'boolean' ? e.unMember : null,
         });
       }
 
@@ -275,8 +277,7 @@ async function main() {
 
       const out = {
         id,
-        schema: 'countries_base_v1',
-        generatedAt: new Date().toISOString(),
+        schema: 'countries_base_v2',
         entities: cleanedEntities,
       };
 
