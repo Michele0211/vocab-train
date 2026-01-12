@@ -268,6 +268,8 @@ async function main() {
           landlocked: Boolean(e?.landlocked),
           // 欠損を false にしない（存在しない場合は null）
           unMember: typeof e?.unMember === 'boolean' ? e.unMember : null,
+          // 首都（欠損は null、推測しない）
+          capital: typeof e?.capital === 'string' ? e.capital.trim() || null : null,
         });
       }
 

@@ -7,7 +7,7 @@
 
 // REST Countries now requires `fields` query.
 const ENDPOINT =
-  'https://restcountries.com/v3.1/all?fields=cca2,name,translations,continents,subregion,landlocked,unMember';
+  'https://restcountries.com/v3.1/all?fields=cca2,name,translations,continents,subregion,landlocked,unMember,capital';
 const ISO2_RE = /^[A-Z]{2}$/;
 
 function asTrimmedString(x) {
@@ -72,6 +72,11 @@ export async function fetchDatasets() {
     const landlocked = Boolean(c?.landlocked);
     // 欠損を false にしない（存在しない場合は null）
     const unMember = typeof c?.unMember === 'boolean' ? c.unMember : null;
+    // 首都（欠損は null、推測しない）
+    const capital =
+      Array.isArray(c?.capital) && typeof c.capital[0] === 'string'
+        ? asTrimmedString(c.capital[0]) || null
+        : null;
 
     byIso2.set(iso2, {
       id: iso2,
@@ -81,6 +86,7 @@ export async function fetchDatasets() {
       region,
       landlocked,
       unMember,
+      capital,
     });
   }
 
