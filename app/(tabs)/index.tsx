@@ -1,15 +1,15 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  Animated,
-  Easing,
-  Keyboard,
-  KeyboardAvoidingView,
-  Platform,
-  Pressable,
-  ScrollView,
-  StyleSheet,
-  TextInput,
-  View,
+    Animated,
+    Easing,
+    Keyboard,
+    KeyboardAvoidingView,
+    Platform,
+    Pressable,
+    ScrollView,
+    StyleSheet,
+    TextInput,
+    View,
 } from 'react-native';
 import { SafeAreaView, useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -20,6 +20,7 @@ import { useThemeColor } from '@/hooks/use-theme-color';
 import { gradeAnswers, type GradeResult } from '@/src/lib/grading';
 import { normalizeAnswer } from '@/src/lib/normalize';
 import { recordPlay } from '@/src/lib/records';
+import { router } from 'expo-router';
 
 export default function HomeScreen() {
   const tint = useThemeColor({}, 'tint');
@@ -165,6 +166,46 @@ export default function HomeScreen() {
 
     // Record play (AsyncStorage). Perfect is score===10 by spec.
     void recordPlay(activeTheme.id, r.score === 10);
+  };
+
+  const openExplain = () => {
+    if (!result) return;
+
+    // correct normalized -> first original (from dataset answers) for stable names
+    const correctNormToFirstOriginal = new Map<string, string>();
+    for (const ans of dataset.answers) {
+      const norm = normalizeAnswer(ans);
+      if (!norm) continue;
+      if (!correctNormToFirstOriginal.has(norm)) correctNormToFirstOriginal.set(norm, ans);
+    }
+    const correctNormSet = new Set(correctNormToFirstOriginal.keys());
+
+    const correctHitNorms = new Set<string>();
+    const correctHitNames: string[] = [];
+    for (const it of items) {
+      if (!it.norm) continue;
+      if (correctHitNorms.has(it.norm)) continue;
+      if (!correctNormSet.has(it.norm)) continue;
+      correctHitNorms.add(it.norm);
+      const name = correctNormToFirstOriginal.get(it.norm);
+      if (name) correctHitNames.push(name);
+    }
+
+    router.push({
+      pathname: '/explain',
+      params: {
+        themeId: dataset.id,
+        themeTitle: dataset.title,
+        correctJson: JSON.stringify(correctHitNames),
+        // MVP: 出題対象の一覧（=answers）も渡す（ただしURLパラメータ肥大を避ける）
+        ...(function () {
+          const themeAnswers = Array.isArray(dataset.answers) ? dataset.answers : [];
+          const answersJson = JSON.stringify(themeAnswers);
+          // expo-router の環境差を考慮して安全寄りの上限にする
+          return answersJson.length <= 6000 ? { themeAnswersJson: answersJson } : {};
+        })(),
+      },
+    });
   };
 
   useEffect(() => {
@@ -512,6 +553,20 @@ export default function HomeScreen() {
                     result.missingSuggested.map((a) => <ThemedText key={a}>- {a}</ThemedText>)
                   )}
                 </ThemedView>
+
+                <View style={styles.resultsBlock}>
+                  <Pressable
+                    onPress={openExplain}
+                    style={({ pressed }) => [
+                      styles.secondaryButton,
+                      { borderColor: tint },
+                      pressed ? { opacity: 0.85 } : null,
+                    ]}>
+                    <ThemedText style={styles.secondaryButtonText} lightColor={tint} darkColor={tint}>
+                      解説
+                    </ThemedText>
+                  </Pressable>
+                </View>
               </ThemedView>
             </Animated.View>
           ) : null}
