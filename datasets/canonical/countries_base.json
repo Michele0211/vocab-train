@@ -1,7 +1,6 @@
 {
   "id": "countries_base",
-  "schema": "countries_base_v1",
-  "generatedAt": "2025-12-29T06:05:21.079Z",
+  "schema": "countries_base_v2",
   "entities": [
     {
       "id": "AD",
@@ -9,7 +8,9 @@
       "label_en": "Andorra",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Andorra la Vella"
     },
     {
       "id": "AE",
@@ -17,7 +18,9 @@
       "label_en": "United Arab Emirates",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Abu Dhabi"
     },
     {
       "id": "AF",
@@ -25,7 +28,9 @@
       "label_en": "Afghanistan",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Kabul"
     },
     {
       "id": "AG",
@@ -33,7 +38,9 @@
       "label_en": "Antigua and Barbuda",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Saint John's"
     },
     {
       "id": "AI",
@@ -41,7 +48,9 @@
       "label_en": "Anguilla",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "The Valley"
     },
     {
       "id": "AL",
@@ -49,7 +58,9 @@
       "label_en": "Albania",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tirana"
     },
     {
       "id": "AM",
@@ -57,7 +68,9 @@
       "label_en": "Armenia",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Yerevan"
     },
     {
       "id": "AO",
@@ -65,7 +78,9 @@
       "label_en": "Angola",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Luanda"
     },
     {
       "id": "AQ",
@@ -73,7 +88,9 @@
       "label_en": "Antarctica",
       "continent": "Antarctica",
       "region": null,
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": null
     },
     {
       "id": "AR",
@@ -81,7 +98,9 @@
       "label_en": "Argentina",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Buenos Aires"
     },
     {
       "id": "AS",
@@ -89,7 +108,9 @@
       "label_en": "American Samoa",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Pago Pago"
     },
     {
       "id": "AT",
@@ -97,7 +118,9 @@
       "label_en": "Austria",
       "continent": "Europe",
       "region": "Central Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Vienna"
     },
     {
       "id": "AU",
@@ -105,7 +128,9 @@
       "label_en": "Australia",
       "continent": "Oceania",
       "region": "Australia and New Zealand",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Canberra"
     },
     {
       "id": "AW",
@@ -113,7 +138,9 @@
       "label_en": "Aruba",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Oranjestad"
     },
     {
       "id": "AX",
@@ -121,7 +148,9 @@
       "label_en": "Åland Islands",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Mariehamn"
     },
     {
       "id": "AZ",
@@ -129,7 +158,9 @@
       "label_en": "Azerbaijan",
       "continent": "Europe",
       "region": "Western Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Baku"
     },
     {
       "id": "BA",
@@ -137,7 +168,9 @@
       "label_en": "Bosnia and Herzegovina",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Sarajevo"
     },
     {
       "id": "BB",
@@ -145,7 +178,9 @@
       "label_en": "Barbados",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Bridgetown"
     },
     {
       "id": "BD",
@@ -153,7 +188,9 @@
       "label_en": "Bangladesh",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Dhaka"
     },
     {
       "id": "BE",
@@ -161,7 +198,9 @@
       "label_en": "Belgium",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Brussels"
     },
     {
       "id": "BF",
@@ -169,7 +208,9 @@
       "label_en": "Burkina Faso",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Ouagadougou"
     },
     {
       "id": "BG",
@@ -177,7 +218,9 @@
       "label_en": "Bulgaria",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Sofia"
     },
     {
       "id": "BH",
@@ -185,7 +228,9 @@
       "label_en": "Bahrain",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Manama"
     },
     {
       "id": "BI",
@@ -193,7 +238,9 @@
       "label_en": "Burundi",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Gitega"
     },
     {
       "id": "BJ",
@@ -201,7 +248,9 @@
       "label_en": "Benin",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Porto-Novo"
     },
     {
       "id": "BL",
@@ -209,7 +258,9 @@
       "label_en": "Saint Barthélemy",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Gustavia"
     },
     {
       "id": "BM",
@@ -217,7 +268,9 @@
       "label_en": "Bermuda",
       "continent": "North America",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Hamilton"
     },
     {
       "id": "BN",
@@ -225,7 +278,9 @@
       "label_en": "Brunei",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Bandar Seri Begawan"
     },
     {
       "id": "BO",
@@ -233,7 +288,9 @@
       "label_en": "Bolivia",
       "continent": "South America",
       "region": "South America",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Sucre"
     },
     {
       "id": "BQ",
@@ -241,7 +298,9 @@
       "label_en": "Caribbean Netherlands",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Kralendijk"
     },
     {
       "id": "BR",
@@ -249,7 +308,9 @@
       "label_en": "Brazil",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Brasília"
     },
     {
       "id": "BS",
@@ -257,7 +318,9 @@
       "label_en": "Bahamas",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Nassau"
     },
     {
       "id": "BT",
@@ -265,7 +328,9 @@
       "label_en": "Bhutan",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Thimphu"
     },
     {
       "id": "BV",
@@ -273,7 +338,9 @@
       "label_en": "Bouvet Island",
       "continent": "Antarctica",
       "region": null,
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": null
     },
     {
       "id": "BW",
@@ -281,7 +348,9 @@
       "label_en": "Botswana",
       "continent": "Africa",
       "region": "Southern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Gaborone"
     },
     {
       "id": "BY",
@@ -289,7 +358,9 @@
       "label_en": "Belarus",
       "continent": "Europe",
       "region": "Eastern Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Minsk"
     },
     {
       "id": "BZ",
@@ -297,7 +368,9 @@
       "label_en": "Belize",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Belmopan"
     },
     {
       "id": "CA",
@@ -305,7 +378,9 @@
       "label_en": "Canada",
       "continent": "North America",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Ottawa"
     },
     {
       "id": "CC",
@@ -313,7 +388,9 @@
       "label_en": "Cocos (Keeling) Islands",
       "continent": "Asia",
       "region": "Australia and New Zealand",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "West Island"
     },
     {
       "id": "CD",
@@ -321,7 +398,9 @@
       "label_en": "DR Congo",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Kinshasa"
     },
     {
       "id": "CF",
@@ -329,7 +408,9 @@
       "label_en": "Central African Republic",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Bangui"
     },
     {
       "id": "CG",
@@ -337,7 +418,9 @@
       "label_en": "Republic of the Congo",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Brazzaville"
     },
     {
       "id": "CH",
@@ -345,7 +428,9 @@
       "label_en": "Switzerland",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Bern"
     },
     {
       "id": "CI",
@@ -353,7 +438,9 @@
       "label_en": "Ivory Coast",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Yamoussoukro"
     },
     {
       "id": "CK",
@@ -361,7 +448,9 @@
       "label_en": "Cook Islands",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Avarua"
     },
     {
       "id": "CL",
@@ -369,7 +458,9 @@
       "label_en": "Chile",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Santiago"
     },
     {
       "id": "CM",
@@ -377,7 +468,9 @@
       "label_en": "Cameroon",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Yaoundé"
     },
     {
       "id": "CN",
@@ -385,7 +478,9 @@
       "label_en": "China",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Beijing"
     },
     {
       "id": "CO",
@@ -393,7 +488,9 @@
       "label_en": "Colombia",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Bogotá"
     },
     {
       "id": "CR",
@@ -401,7 +498,9 @@
       "label_en": "Costa Rica",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "San José"
     },
     {
       "id": "CU",
@@ -409,7 +508,9 @@
       "label_en": "Cuba",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Havana"
     },
     {
       "id": "CV",
@@ -417,7 +518,9 @@
       "label_en": "Cape Verde",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Praia"
     },
     {
       "id": "CW",
@@ -425,7 +528,9 @@
       "label_en": "Curaçao",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Willemstad"
     },
     {
       "id": "CX",
@@ -433,7 +538,9 @@
       "label_en": "Christmas Island",
       "continent": "Asia",
       "region": "Australia and New Zealand",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Flying Fish Cove"
     },
     {
       "id": "CY",
@@ -441,7 +548,9 @@
       "label_en": "Cyprus",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Nicosia"
     },
     {
       "id": "CZ",
@@ -449,7 +558,9 @@
       "label_en": "Czechia",
       "continent": "Europe",
       "region": "Central Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Prague"
     },
     {
       "id": "DE",
@@ -457,7 +568,9 @@
       "label_en": "Germany",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Berlin"
     },
     {
       "id": "DJ",
@@ -465,7 +578,9 @@
       "label_en": "Djibouti",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Djibouti"
     },
     {
       "id": "DK",
@@ -473,7 +588,9 @@
       "label_en": "Denmark",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Copenhagen"
     },
     {
       "id": "DM",
@@ -481,7 +598,9 @@
       "label_en": "Dominica",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Roseau"
     },
     {
       "id": "DO",
@@ -489,7 +608,9 @@
       "label_en": "Dominican Republic",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Santo Domingo"
     },
     {
       "id": "DZ",
@@ -497,7 +618,9 @@
       "label_en": "Algeria",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Algiers"
     },
     {
       "id": "EC",
@@ -505,7 +628,9 @@
       "label_en": "Ecuador",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Quito"
     },
     {
       "id": "EE",
@@ -513,7 +638,9 @@
       "label_en": "Estonia",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tallinn"
     },
     {
       "id": "EG",
@@ -521,7 +648,9 @@
       "label_en": "Egypt",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Cairo"
     },
     {
       "id": "EH",
@@ -529,7 +658,9 @@
       "label_en": "Western Sahara",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "El Aaiún"
     },
     {
       "id": "ER",
@@ -537,7 +668,9 @@
       "label_en": "Eritrea",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Asmara"
     },
     {
       "id": "ES",
@@ -545,7 +678,9 @@
       "label_en": "Spain",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Madrid"
     },
     {
       "id": "ET",
@@ -553,7 +688,9 @@
       "label_en": "Ethiopia",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Addis Ababa"
     },
     {
       "id": "FI",
@@ -561,7 +698,9 @@
       "label_en": "Finland",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Helsinki"
     },
     {
       "id": "FJ",
@@ -569,7 +708,9 @@
       "label_en": "Fiji",
       "continent": "Oceania",
       "region": "Melanesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Suva"
     },
     {
       "id": "FK",
@@ -577,7 +718,9 @@
       "label_en": "Falkland Islands",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Stanley"
     },
     {
       "id": "FM",
@@ -585,7 +728,9 @@
       "label_en": "Micronesia",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Palikir"
     },
     {
       "id": "FO",
@@ -593,7 +738,9 @@
       "label_en": "Faroe Islands",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Tórshavn"
     },
     {
       "id": "FR",
@@ -601,7 +748,9 @@
       "label_en": "France",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Paris"
     },
     {
       "id": "GA",
@@ -609,7 +758,9 @@
       "label_en": "Gabon",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Libreville"
     },
     {
       "id": "GB",
@@ -617,7 +768,9 @@
       "label_en": "United Kingdom",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "London"
     },
     {
       "id": "GD",
@@ -625,7 +778,9 @@
       "label_en": "Grenada",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "St. George's"
     },
     {
       "id": "GE",
@@ -633,7 +788,9 @@
       "label_en": "Georgia",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tbilisi"
     },
     {
       "id": "GF",
@@ -641,7 +798,9 @@
       "label_en": "French Guiana",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Cayenne"
     },
     {
       "id": "GG",
@@ -649,7 +808,9 @@
       "label_en": "Guernsey",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "St. Peter Port"
     },
     {
       "id": "GH",
@@ -657,7 +818,9 @@
       "label_en": "Ghana",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Accra"
     },
     {
       "id": "GI",
@@ -665,7 +828,9 @@
       "label_en": "Gibraltar",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Gibraltar"
     },
     {
       "id": "GL",
@@ -673,7 +838,9 @@
       "label_en": "Greenland",
       "continent": "North America",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Nuuk"
     },
     {
       "id": "GM",
@@ -681,7 +848,9 @@
       "label_en": "Gambia",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Banjul"
     },
     {
       "id": "GN",
@@ -689,7 +858,9 @@
       "label_en": "Guinea",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Conakry"
     },
     {
       "id": "GP",
@@ -697,7 +868,9 @@
       "label_en": "Guadeloupe",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Basse-Terre"
     },
     {
       "id": "GQ",
@@ -705,7 +878,9 @@
       "label_en": "Equatorial Guinea",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Malabo"
     },
     {
       "id": "GR",
@@ -713,7 +888,9 @@
       "label_en": "Greece",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Athens"
     },
     {
       "id": "GS",
@@ -721,7 +898,9 @@
       "label_en": "South Georgia",
       "continent": "Antarctica",
       "region": null,
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "King Edward Point"
     },
     {
       "id": "GT",
@@ -729,7 +908,9 @@
       "label_en": "Guatemala",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Guatemala City"
     },
     {
       "id": "GU",
@@ -737,7 +918,9 @@
       "label_en": "Guam",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Hagåtña"
     },
     {
       "id": "GW",
@@ -745,7 +928,9 @@
       "label_en": "Guinea-Bissau",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Bissau"
     },
     {
       "id": "GY",
@@ -753,7 +938,9 @@
       "label_en": "Guyana",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Georgetown"
     },
     {
       "id": "HK",
@@ -761,7 +948,9 @@
       "label_en": "Hong Kong",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "City of Victoria"
     },
     {
       "id": "HM",
@@ -769,7 +958,9 @@
       "label_en": "Heard Island and McDonald Islands",
       "continent": "Antarctica",
       "region": null,
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": null
     },
     {
       "id": "HN",
@@ -777,7 +968,9 @@
       "label_en": "Honduras",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tegucigalpa"
     },
     {
       "id": "HR",
@@ -785,7 +978,9 @@
       "label_en": "Croatia",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Zagreb"
     },
     {
       "id": "HT",
@@ -793,7 +988,9 @@
       "label_en": "Haiti",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Port-au-Prince"
     },
     {
       "id": "HU",
@@ -801,7 +998,9 @@
       "label_en": "Hungary",
       "continent": "Europe",
       "region": "Central Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Budapest"
     },
     {
       "id": "ID",
@@ -809,7 +1008,9 @@
       "label_en": "Indonesia",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Jakarta"
     },
     {
       "id": "IE",
@@ -817,7 +1018,9 @@
       "label_en": "Ireland",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Dublin"
     },
     {
       "id": "IL",
@@ -825,7 +1028,9 @@
       "label_en": "Israel",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Jerusalem"
     },
     {
       "id": "IM",
@@ -833,7 +1038,9 @@
       "label_en": "Isle of Man",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Douglas"
     },
     {
       "id": "IN",
@@ -841,7 +1048,9 @@
       "label_en": "India",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "New Delhi"
     },
     {
       "id": "IO",
@@ -849,7 +1058,9 @@
       "label_en": "British Indian Ocean Territory",
       "continent": "Asia",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Diego Garcia"
     },
     {
       "id": "IQ",
@@ -857,7 +1068,9 @@
       "label_en": "Iraq",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Baghdad"
     },
     {
       "id": "IR",
@@ -865,7 +1078,9 @@
       "label_en": "Iran",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tehran"
     },
     {
       "id": "IS",
@@ -873,7 +1088,9 @@
       "label_en": "Iceland",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Reykjavik"
     },
     {
       "id": "IT",
@@ -881,7 +1098,9 @@
       "label_en": "Italy",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Rome"
     },
     {
       "id": "JE",
@@ -889,7 +1108,9 @@
       "label_en": "Jersey",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Saint Helier"
     },
     {
       "id": "JM",
@@ -897,7 +1118,9 @@
       "label_en": "Jamaica",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Kingston"
     },
     {
       "id": "JO",
@@ -905,7 +1128,9 @@
       "label_en": "Jordan",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Amman"
     },
     {
       "id": "JP",
@@ -913,7 +1138,9 @@
       "label_en": "Japan",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tokyo"
     },
     {
       "id": "KE",
@@ -921,7 +1148,9 @@
       "label_en": "Kenya",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Nairobi"
     },
     {
       "id": "KG",
@@ -929,7 +1158,9 @@
       "label_en": "Kyrgyzstan",
       "continent": "Asia",
       "region": "Central Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Bishkek"
     },
     {
       "id": "KH",
@@ -937,7 +1168,9 @@
       "label_en": "Cambodia",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Phnom Penh"
     },
     {
       "id": "KI",
@@ -945,7 +1178,9 @@
       "label_en": "Kiribati",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "South Tarawa"
     },
     {
       "id": "KM",
@@ -953,7 +1188,9 @@
       "label_en": "Comoros",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Moroni"
     },
     {
       "id": "KN",
@@ -961,7 +1198,9 @@
       "label_en": "Saint Kitts and Nevis",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Basseterre"
     },
     {
       "id": "KP",
@@ -969,7 +1208,9 @@
       "label_en": "North Korea",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Pyongyang"
     },
     {
       "id": "KR",
@@ -977,7 +1218,9 @@
       "label_en": "South Korea",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Seoul"
     },
     {
       "id": "KW",
@@ -985,7 +1228,9 @@
       "label_en": "Kuwait",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Kuwait City"
     },
     {
       "id": "KY",
@@ -993,7 +1238,9 @@
       "label_en": "Cayman Islands",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "George Town"
     },
     {
       "id": "KZ",
@@ -1001,7 +1248,9 @@
       "label_en": "Kazakhstan",
       "continent": "Asia",
       "region": "Central Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Astana"
     },
     {
       "id": "LA",
@@ -1009,7 +1258,9 @@
       "label_en": "Laos",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Vientiane"
     },
     {
       "id": "LB",
@@ -1017,7 +1268,9 @@
       "label_en": "Lebanon",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Beirut"
     },
     {
       "id": "LC",
@@ -1025,7 +1278,9 @@
       "label_en": "Saint Lucia",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Castries"
     },
     {
       "id": "LI",
@@ -1033,7 +1288,9 @@
       "label_en": "Liechtenstein",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Vaduz"
     },
     {
       "id": "LK",
@@ -1041,7 +1298,9 @@
       "label_en": "Sri Lanka",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Sri Jayawardenepura Kotte"
     },
     {
       "id": "LR",
@@ -1049,7 +1308,9 @@
       "label_en": "Liberia",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Monrovia"
     },
     {
       "id": "LS",
@@ -1057,7 +1318,9 @@
       "label_en": "Lesotho",
       "continent": "Africa",
       "region": "Southern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Maseru"
     },
     {
       "id": "LT",
@@ -1065,7 +1328,9 @@
       "label_en": "Lithuania",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Vilnius"
     },
     {
       "id": "LU",
@@ -1073,7 +1338,9 @@
       "label_en": "Luxembourg",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Luxembourg"
     },
     {
       "id": "LV",
@@ -1081,7 +1348,9 @@
       "label_en": "Latvia",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Riga"
     },
     {
       "id": "LY",
@@ -1089,7 +1358,9 @@
       "label_en": "Libya",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tripoli"
     },
     {
       "id": "MA",
@@ -1097,7 +1368,9 @@
       "label_en": "Morocco",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Rabat"
     },
     {
       "id": "MC",
@@ -1105,7 +1378,9 @@
       "label_en": "Monaco",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Monaco"
     },
     {
       "id": "MD",
@@ -1113,7 +1388,9 @@
       "label_en": "Moldova",
       "continent": "Europe",
       "region": "Eastern Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Chișinău"
     },
     {
       "id": "ME",
@@ -1121,7 +1398,9 @@
       "label_en": "Montenegro",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Podgorica"
     },
     {
       "id": "MF",
@@ -1129,7 +1408,9 @@
       "label_en": "Saint Martin",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Marigot"
     },
     {
       "id": "MG",
@@ -1137,7 +1418,9 @@
       "label_en": "Madagascar",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Antananarivo"
     },
     {
       "id": "MH",
@@ -1145,7 +1428,9 @@
       "label_en": "Marshall Islands",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Majuro"
     },
     {
       "id": "MK",
@@ -1153,7 +1438,9 @@
       "label_en": "North Macedonia",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Skopje"
     },
     {
       "id": "ML",
@@ -1161,7 +1448,9 @@
       "label_en": "Mali",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Bamako"
     },
     {
       "id": "MM",
@@ -1169,7 +1458,9 @@
       "label_en": "Myanmar",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Naypyidaw"
     },
     {
       "id": "MN",
@@ -1177,7 +1468,9 @@
       "label_en": "Mongolia",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Ulan Bator"
     },
     {
       "id": "MO",
@@ -1185,7 +1478,9 @@
       "label_en": "Macau",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": null
     },
     {
       "id": "MP",
@@ -1193,7 +1488,9 @@
       "label_en": "Northern Mariana Islands",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Saipan"
     },
     {
       "id": "MQ",
@@ -1201,7 +1498,9 @@
       "label_en": "Martinique",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Fort-de-France"
     },
     {
       "id": "MR",
@@ -1209,7 +1508,9 @@
       "label_en": "Mauritania",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Nouakchott"
     },
     {
       "id": "MS",
@@ -1217,7 +1518,9 @@
       "label_en": "Montserrat",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Plymouth"
     },
     {
       "id": "MT",
@@ -1225,7 +1528,9 @@
       "label_en": "Malta",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Valletta"
     },
     {
       "id": "MU",
@@ -1233,7 +1538,9 @@
       "label_en": "Mauritius",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Port Louis"
     },
     {
       "id": "MV",
@@ -1241,7 +1548,9 @@
       "label_en": "Maldives",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Malé"
     },
     {
       "id": "MW",
@@ -1249,7 +1558,9 @@
       "label_en": "Malawi",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Lilongwe"
     },
     {
       "id": "MX",
@@ -1257,7 +1568,9 @@
       "label_en": "Mexico",
       "continent": "North America",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Mexico City"
     },
     {
       "id": "MY",
@@ -1265,7 +1578,9 @@
       "label_en": "Malaysia",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Kuala Lumpur"
     },
     {
       "id": "MZ",
@@ -1273,7 +1588,9 @@
       "label_en": "Mozambique",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Maputo"
     },
     {
       "id": "NA",
@@ -1281,7 +1598,9 @@
       "label_en": "Namibia",
       "continent": "Africa",
       "region": "Southern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Windhoek"
     },
     {
       "id": "NC",
@@ -1289,7 +1608,9 @@
       "label_en": "New Caledonia",
       "continent": "Oceania",
       "region": "Melanesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Nouméa"
     },
     {
       "id": "NE",
@@ -1297,7 +1618,9 @@
       "label_en": "Niger",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Niamey"
     },
     {
       "id": "NF",
@@ -1305,7 +1628,9 @@
       "label_en": "Norfolk Island",
       "continent": "Oceania",
       "region": "Australia and New Zealand",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Kingston"
     },
     {
       "id": "NG",
@@ -1313,7 +1638,9 @@
       "label_en": "Nigeria",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Abuja"
     },
     {
       "id": "NI",
@@ -1321,7 +1648,9 @@
       "label_en": "Nicaragua",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Managua"
     },
     {
       "id": "NL",
@@ -1329,7 +1658,9 @@
       "label_en": "Netherlands",
       "continent": "Europe",
       "region": "Western Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Amsterdam"
     },
     {
       "id": "NO",
@@ -1337,7 +1668,9 @@
       "label_en": "Norway",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Oslo"
     },
     {
       "id": "NP",
@@ -1345,7 +1678,9 @@
       "label_en": "Nepal",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Kathmandu"
     },
     {
       "id": "NR",
@@ -1353,7 +1688,9 @@
       "label_en": "Nauru",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Yaren"
     },
     {
       "id": "NU",
@@ -1361,7 +1698,9 @@
       "label_en": "Niue",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Alofi"
     },
     {
       "id": "NZ",
@@ -1369,7 +1708,9 @@
       "label_en": "New Zealand",
       "continent": "Oceania",
       "region": "Australia and New Zealand",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Wellington"
     },
     {
       "id": "OM",
@@ -1377,7 +1718,9 @@
       "label_en": "Oman",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Muscat"
     },
     {
       "id": "PA",
@@ -1385,7 +1728,9 @@
       "label_en": "Panama",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Panama City"
     },
     {
       "id": "PE",
@@ -1393,7 +1738,9 @@
       "label_en": "Peru",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Lima"
     },
     {
       "id": "PF",
@@ -1401,7 +1748,9 @@
       "label_en": "French Polynesia",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Papeetē"
     },
     {
       "id": "PG",
@@ -1409,7 +1758,9 @@
       "label_en": "Papua New Guinea",
       "continent": "Oceania",
       "region": "Melanesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Port Moresby"
     },
     {
       "id": "PH",
@@ -1417,7 +1768,9 @@
       "label_en": "Philippines",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Manila"
     },
     {
       "id": "PK",
@@ -1425,7 +1778,9 @@
       "label_en": "Pakistan",
       "continent": "Asia",
       "region": "Southern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Islamabad"
     },
     {
       "id": "PL",
@@ -1433,7 +1788,9 @@
       "label_en": "Poland",
       "continent": "Europe",
       "region": "Central Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Warsaw"
     },
     {
       "id": "PM",
@@ -1441,7 +1798,9 @@
       "label_en": "Saint Pierre and Miquelon",
       "continent": "North America",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Saint-Pierre"
     },
     {
       "id": "PN",
@@ -1449,7 +1808,9 @@
       "label_en": "Pitcairn Islands",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Adamstown"
     },
     {
       "id": "PR",
@@ -1457,7 +1818,9 @@
       "label_en": "Puerto Rico",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "San Juan"
     },
     {
       "id": "PS",
@@ -1465,7 +1828,9 @@
       "label_en": "Palestine",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Ramallah"
     },
     {
       "id": "PT",
@@ -1473,7 +1838,9 @@
       "label_en": "Portugal",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Lisbon"
     },
     {
       "id": "PW",
@@ -1481,7 +1848,9 @@
       "label_en": "Palau",
       "continent": "Oceania",
       "region": "Micronesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Ngerulmud"
     },
     {
       "id": "PY",
@@ -1489,7 +1858,9 @@
       "label_en": "Paraguay",
       "continent": "South America",
       "region": "South America",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Asunción"
     },
     {
       "id": "QA",
@@ -1497,7 +1868,9 @@
       "label_en": "Qatar",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Doha"
     },
     {
       "id": "RE",
@@ -1505,7 +1878,9 @@
       "label_en": "Réunion",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Saint-Denis"
     },
     {
       "id": "RO",
@@ -1513,7 +1888,9 @@
       "label_en": "Romania",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Bucharest"
     },
     {
       "id": "RS",
@@ -1521,7 +1898,9 @@
       "label_en": "Serbia",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Belgrade"
     },
     {
       "id": "RU",
@@ -1529,7 +1908,9 @@
       "label_en": "Russia",
       "continent": "Europe",
       "region": "Eastern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Moscow"
     },
     {
       "id": "RW",
@@ -1537,7 +1918,9 @@
       "label_en": "Rwanda",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Kigali"
     },
     {
       "id": "SA",
@@ -1545,7 +1928,9 @@
       "label_en": "Saudi Arabia",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Riyadh"
     },
     {
       "id": "SB",
@@ -1553,7 +1938,9 @@
       "label_en": "Solomon Islands",
       "continent": "Oceania",
       "region": "Melanesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Honiara"
     },
     {
       "id": "SC",
@@ -1561,7 +1948,9 @@
       "label_en": "Seychelles",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Victoria"
     },
     {
       "id": "SD",
@@ -1569,7 +1958,9 @@
       "label_en": "Sudan",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Khartoum"
     },
     {
       "id": "SE",
@@ -1577,7 +1968,9 @@
       "label_en": "Sweden",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Stockholm"
     },
     {
       "id": "SG",
@@ -1585,7 +1978,9 @@
       "label_en": "Singapore",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Singapore"
     },
     {
       "id": "SH",
@@ -1593,7 +1988,9 @@
       "label_en": "Saint Helena, Ascension and Tristan da Cunha",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Jamestown"
     },
     {
       "id": "SI",
@@ -1601,7 +1998,9 @@
       "label_en": "Slovenia",
       "continent": "Europe",
       "region": "Central Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Ljubljana"
     },
     {
       "id": "SJ",
@@ -1609,7 +2008,9 @@
       "label_en": "Svalbard and Jan Mayen",
       "continent": "Europe",
       "region": "Northern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Longyearbyen"
     },
     {
       "id": "SK",
@@ -1617,7 +2018,9 @@
       "label_en": "Slovakia",
       "continent": "Europe",
       "region": "Central Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Bratislava"
     },
     {
       "id": "SL",
@@ -1625,7 +2028,9 @@
       "label_en": "Sierra Leone",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Freetown"
     },
     {
       "id": "SM",
@@ -1633,7 +2038,9 @@
       "label_en": "San Marino",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "City of San Marino"
     },
     {
       "id": "SN",
@@ -1641,7 +2048,9 @@
       "label_en": "Senegal",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Dakar"
     },
     {
       "id": "SO",
@@ -1649,7 +2058,9 @@
       "label_en": "Somalia",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Mogadishu"
     },
     {
       "id": "SR",
@@ -1657,7 +2068,9 @@
       "label_en": "Suriname",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Paramaribo"
     },
     {
       "id": "SS",
@@ -1665,7 +2078,9 @@
       "label_en": "South Sudan",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Juba"
     },
     {
       "id": "ST",
@@ -1673,7 +2088,9 @@
       "label_en": "São Tomé and Príncipe",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "São Tomé"
     },
     {
       "id": "SV",
@@ -1681,7 +2098,9 @@
       "label_en": "El Salvador",
       "continent": "North America",
       "region": "Central America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "San Salvador"
     },
     {
       "id": "SX",
@@ -1689,7 +2108,9 @@
       "label_en": "Sint Maarten",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Philipsburg"
     },
     {
       "id": "SY",
@@ -1697,7 +2118,9 @@
       "label_en": "Syria",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Damascus"
     },
     {
       "id": "SZ",
@@ -1705,7 +2128,9 @@
       "label_en": "Eswatini",
       "continent": "Africa",
       "region": "Southern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Mbabane"
     },
     {
       "id": "TC",
@@ -1713,7 +2138,9 @@
       "label_en": "Turks and Caicos Islands",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Cockburn Town"
     },
     {
       "id": "TD",
@@ -1721,7 +2148,9 @@
       "label_en": "Chad",
       "continent": "Africa",
       "region": "Middle Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "N'Djamena"
     },
     {
       "id": "TF",
@@ -1729,7 +2158,9 @@
       "label_en": "French Southern and Antarctic Lands",
       "continent": "Antarctica",
       "region": null,
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Port-aux-Français"
     },
     {
       "id": "TG",
@@ -1737,7 +2168,9 @@
       "label_en": "Togo",
       "continent": "Africa",
       "region": "Western Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Lomé"
     },
     {
       "id": "TH",
@@ -1745,7 +2178,9 @@
       "label_en": "Thailand",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Bangkok"
     },
     {
       "id": "TJ",
@@ -1753,7 +2188,9 @@
       "label_en": "Tajikistan",
       "continent": "Asia",
       "region": "Central Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Dushanbe"
     },
     {
       "id": "TK",
@@ -1761,7 +2198,9 @@
       "label_en": "Tokelau",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Fakaofo"
     },
     {
       "id": "TL",
@@ -1769,7 +2208,9 @@
       "label_en": "Timor-Leste",
       "continent": "Oceania",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Dili"
     },
     {
       "id": "TM",
@@ -1777,7 +2218,9 @@
       "label_en": "Turkmenistan",
       "continent": "Asia",
       "region": "Central Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Ashgabat"
     },
     {
       "id": "TN",
@@ -1785,7 +2228,9 @@
       "label_en": "Tunisia",
       "continent": "Africa",
       "region": "Northern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Tunis"
     },
     {
       "id": "TO",
@@ -1793,7 +2238,9 @@
       "label_en": "Tonga",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Nuku'alofa"
     },
     {
       "id": "TR",
@@ -1801,7 +2248,9 @@
       "label_en": "Turkey",
       "continent": "Europe",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Ankara"
     },
     {
       "id": "TT",
@@ -1809,7 +2258,9 @@
       "label_en": "Trinidad and Tobago",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Port of Spain"
     },
     {
       "id": "TV",
@@ -1817,7 +2268,9 @@
       "label_en": "Tuvalu",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Funafuti"
     },
     {
       "id": "TW",
@@ -1825,7 +2278,9 @@
       "label_en": "Taiwan",
       "continent": "Asia",
       "region": "Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Taipei"
     },
     {
       "id": "TZ",
@@ -1833,7 +2288,9 @@
       "label_en": "Tanzania",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Dodoma"
     },
     {
       "id": "UA",
@@ -1841,7 +2298,9 @@
       "label_en": "Ukraine",
       "continent": "Europe",
       "region": "Eastern Europe",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Kyiv"
     },
     {
       "id": "UG",
@@ -1849,7 +2308,9 @@
       "label_en": "Uganda",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Kampala"
     },
     {
       "id": "UM",
@@ -1857,7 +2318,9 @@
       "label_en": "United States Minor Outlying Islands",
       "continent": "Oceania",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Washington DC"
     },
     {
       "id": "US",
@@ -1865,7 +2328,9 @@
       "label_en": "United States",
       "continent": "North America",
       "region": "North America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Washington, D.C."
     },
     {
       "id": "UY",
@@ -1873,7 +2338,9 @@
       "label_en": "Uruguay",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Montevideo"
     },
     {
       "id": "UZ",
@@ -1881,7 +2348,9 @@
       "label_en": "Uzbekistan",
       "continent": "Asia",
       "region": "Central Asia",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Tashkent"
     },
     {
       "id": "VA",
@@ -1889,7 +2358,9 @@
       "label_en": "Vatican City",
       "continent": "Europe",
       "region": "Southern Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": false,
+      "capital": "Vatican City"
     },
     {
       "id": "VC",
@@ -1897,7 +2368,9 @@
       "label_en": "Saint Vincent and the Grenadines",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Kingstown"
     },
     {
       "id": "VE",
@@ -1905,7 +2378,9 @@
       "label_en": "Venezuela",
       "continent": "South America",
       "region": "South America",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Caracas"
     },
     {
       "id": "VG",
@@ -1913,7 +2388,9 @@
       "label_en": "British Virgin Islands",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Road Town"
     },
     {
       "id": "VI",
@@ -1921,7 +2398,9 @@
       "label_en": "United States Virgin Islands",
       "continent": "North America",
       "region": "Caribbean",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Charlotte Amalie"
     },
     {
       "id": "VN",
@@ -1929,7 +2408,9 @@
       "label_en": "Vietnam",
       "continent": "Asia",
       "region": "South-Eastern Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Hanoi"
     },
     {
       "id": "VU",
@@ -1937,7 +2418,9 @@
       "label_en": "Vanuatu",
       "continent": "Oceania",
       "region": "Melanesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Port Vila"
     },
     {
       "id": "WF",
@@ -1945,7 +2428,9 @@
       "label_en": "Wallis and Futuna",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Mata-Utu"
     },
     {
       "id": "WS",
@@ -1953,7 +2438,9 @@
       "label_en": "Samoa",
       "continent": "Oceania",
       "region": "Polynesia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Apia"
     },
     {
       "id": "XK",
@@ -1961,7 +2448,9 @@
       "label_en": "Kosovo",
       "continent": "Europe",
       "region": "Southeast Europe",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": false,
+      "capital": "Pristina"
     },
     {
       "id": "YE",
@@ -1969,7 +2458,9 @@
       "label_en": "Yemen",
       "continent": "Asia",
       "region": "Western Asia",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Sana'a"
     },
     {
       "id": "YT",
@@ -1977,7 +2468,9 @@
       "label_en": "Mayotte",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": false,
+      "capital": "Mamoudzou"
     },
     {
       "id": "ZA",
@@ -1985,7 +2478,9 @@
       "label_en": "South Africa",
       "continent": "Africa",
       "region": "Southern Africa",
-      "landlocked": false
+      "landlocked": false,
+      "unMember": true,
+      "capital": "Pretoria"
     },
     {
       "id": "ZM",
@@ -1993,7 +2488,9 @@
       "label_en": "Zambia",
       "continent": "Africa",
       "region": "Eastern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Lusaka"
     },
     {
       "id": "ZW",
@@ -2001,7 +2498,9 @@
       "label_en": "Zimbabwe",
       "continent": "Africa",
       "region": "Southern Africa",
-      "landlocked": true
+      "landlocked": true,
+      "unMember": true,
+      "capital": "Harare"
     }
   ]
 }
